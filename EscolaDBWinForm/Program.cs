@@ -1,7 +1,13 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
 namespace EscolaDBWinForm
 {
     internal static class Program
     {
+        private static IConfigurationRoot _configuration;
+        private static DbContextOptionsBuilder<EscolaDBWinForm.Data.EscolaDbContext> _optionsBuilder;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -10,8 +16,24 @@ namespace EscolaDBWinForm
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            BuildConfiguration();
+            BuildOptions();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
+        static void BuildConfiguration() { 
+        IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            _configuration = builder.Build();
+        }
+
+        static void BuildOptions()
+        {
+            _optionsBuilder = new DbContextOptionsBuilder<EscolaDBWinForm.Data.EscolaDbContext>();
+            _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("EscolaDB"));
+        }
+
     }
 }
