@@ -18,6 +18,7 @@ public partial class Aluno
 
     [Column("nomeProprio")]
     [StringLength(100)]
+    [Required(ErrorMessage = "O nome do Aluno é obrigatório")]
     public string NomeProprio { get; set; } = null!;
 
     [Column("apelido")]
