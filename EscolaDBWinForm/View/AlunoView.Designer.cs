@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tab_AlunosLista = new System.Windows.Forms.TabPage();
+            this.tab_AlunoDetalhe = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tB_Search = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -63,8 +63,8 @@
             this.numUpD_NumeroAluno = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tab_AlunosLista.SuspendLayout();
+            this.tab_AlunoDetalhe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpD_NumeroAluno)).BeginInit();
             this.SuspendLayout();
@@ -90,61 +90,61 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tab_AlunosLista);
+            this.tabControl1.Controls.Add(this.tab_AlunoDetalhe);
             this.tabControl1.Location = new System.Drawing.Point(0, 64);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 384);
             this.tabControl1.TabIndex = 1;
             // 
-            // tabPage1
+            // tab_AlunosLista
             // 
-            this.tabPage1.Controls.Add(this.btn_DeleteAluno);
-            this.tabPage1.Controls.Add(this.btn_EditAluno);
-            this.tabPage1.Controls.Add(this.btn_AddAluno);
-            this.tabPage1.Controls.Add(this.dgv_Alunos);
-            this.tabPage1.Controls.Add(this.btn_Search);
-            this.tabPage1.Controls.Add(this.tB_Search);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 356);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Alunos Lista";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tab_AlunosLista.Controls.Add(this.btn_DeleteAluno);
+            this.tab_AlunosLista.Controls.Add(this.btn_EditAluno);
+            this.tab_AlunosLista.Controls.Add(this.btn_AddAluno);
+            this.tab_AlunosLista.Controls.Add(this.dgv_Alunos);
+            this.tab_AlunosLista.Controls.Add(this.btn_Search);
+            this.tab_AlunosLista.Controls.Add(this.tB_Search);
+            this.tab_AlunosLista.Controls.Add(this.label2);
+            this.tab_AlunosLista.Location = new System.Drawing.Point(4, 24);
+            this.tab_AlunosLista.Name = "tab_AlunosLista";
+            this.tab_AlunosLista.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_AlunosLista.Size = new System.Drawing.Size(792, 356);
+            this.tab_AlunosLista.TabIndex = 0;
+            this.tab_AlunosLista.Text = "Alunos Lista";
+            this.tab_AlunosLista.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tab_AlunoDetalhe
             // 
-            this.tabPage2.Controls.Add(this.numUpD_NumeroAluno);
-            this.tabPage2.Controls.Add(this.dTimeP_AnoCurso);
-            this.tabPage2.Controls.Add(this.dTimeP_DataNascimento);
-            this.tabPage2.Controls.Add(this.AnoCurso);
-            this.tabPage2.Controls.Add(this.tb_Curso);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.btn_Cancel);
-            this.tabPage2.Controls.Add(this.btn_Save);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.tb_Telefone);
-            this.tabPage2.Controls.Add(this.tb_Email);
-            this.tabPage2.Controls.Add(this.tb_Morada);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.tb_Apelido);
-            this.tabPage2.Controls.Add(this.tb_NomeAluno);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 356);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Aluno Detalhe";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tab_AlunoDetalhe.Controls.Add(this.numUpD_NumeroAluno);
+            this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_AnoCurso);
+            this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_DataNascimento);
+            this.tab_AlunoDetalhe.Controls.Add(this.AnoCurso);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_Curso);
+            this.tab_AlunoDetalhe.Controls.Add(this.label11);
+            this.tab_AlunoDetalhe.Controls.Add(this.btn_Cancel);
+            this.tab_AlunoDetalhe.Controls.Add(this.btn_Save);
+            this.tab_AlunoDetalhe.Controls.Add(this.label10);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_Telefone);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_Email);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_Morada);
+            this.tab_AlunoDetalhe.Controls.Add(this.label9);
+            this.tab_AlunoDetalhe.Controls.Add(this.label8);
+            this.tab_AlunoDetalhe.Controls.Add(this.label7);
+            this.tab_AlunoDetalhe.Controls.Add(this.label6);
+            this.tab_AlunoDetalhe.Controls.Add(this.label5);
+            this.tab_AlunoDetalhe.Controls.Add(this.label4);
+            this.tab_AlunoDetalhe.Controls.Add(this.label3);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_Apelido);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_NomeAluno);
+            this.tab_AlunoDetalhe.Location = new System.Drawing.Point(4, 24);
+            this.tab_AlunoDetalhe.Name = "tab_AlunoDetalhe";
+            this.tab_AlunoDetalhe.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_AlunoDetalhe.Size = new System.Drawing.Size(792, 356);
+            this.tab_AlunoDetalhe.TabIndex = 1;
+            this.tab_AlunoDetalhe.Text = "Aluno Detalhe";
+            this.tab_AlunoDetalhe.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -390,10 +390,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tab_AlunosLista.ResumeLayout(false);
+            this.tab_AlunosLista.PerformLayout();
+            this.tab_AlunoDetalhe.ResumeLayout(false);
+            this.tab_AlunoDetalhe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpD_NumeroAluno)).EndInit();
             this.ResumeLayout(false);
@@ -405,7 +405,7 @@
         private Label label1;
         private Panel panel1;
         private TabControl tabControl1;
-        private TabPage tabPage1;
+        private TabPage tab_AlunosLista;
         private Button btn_DeleteAluno;
         private Button btn_EditAluno;
         private Button btn_AddAluno;
@@ -413,7 +413,7 @@
         private Button btn_Search;
         private TextBox tB_Search;
         private Label label2;
-        private TabPage tabPage2;
+        private TabPage tab_AlunoDetalhe;
         private TextBox tb_NomeAluno;
         private Label label10;
         private TextBox tb_Telefone;

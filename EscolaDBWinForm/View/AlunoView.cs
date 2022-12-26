@@ -21,6 +21,24 @@ namespace EscolaDBWinForm.View
         public AlunoView()
         {
             InitializeComponent();
+            MatchAndRaiseViewEvents();
+            //Esconde a segunda tab. So deve ser mostrada quando o utilizador clicar no botao Editar ou Adicionar
+            tabControl1.TabPages.Remove(tab_AlunoDetalhe);
+        }
+
+        private void MatchAndRaiseViewEvents()
+        {
+            //Associa o envento via expressao lambda, verifica se nao e nulo ? entao lanca o evento, envia o objecto this.Form e o argumento do evento como parametro
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            tB_Search.KeyDown += (s, e) =>
+            {
+                //Se apertar enter no textbox de pesquisa, entao chama o evento de pesquisa
+                if (e.KeyCode == Keys.Enter)
+                {
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+                }
+            };
+
         }
 
         //Propriedades

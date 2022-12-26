@@ -1,6 +1,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using EscolaDBWinForm.Models;
+using EscolaDBWinForm.Data;
+using EscolaDBWinForm.Controller;
+using EscolaDBWinForm.View;
 
 namespace EscolaDBWinForm
 {
@@ -19,7 +23,12 @@ namespace EscolaDBWinForm
             BuildConfiguration();
             BuildOptions();
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            IAlunoView view = new AlunoView();
+            IAluno model = new AlunoDbLogic();
+            new AlunoController(view, model);
+            Application.Run((Form)view);
         }
 
         static void BuildConfiguration() { 

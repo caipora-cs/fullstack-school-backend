@@ -13,7 +13,7 @@ namespace EscolaDBWinForm.Models
         void Edit(Aluno aluno);
         void Delete(int id);
         IEnumerable<Aluno> GetAll();
-        IEnumerable<Aluno> GetByValue(); //Search por valor
+        IEnumerable<Aluno> GetByValue(string value); //Search por valor
 
     }
 }
