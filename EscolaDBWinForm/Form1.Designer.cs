@@ -30,6 +30,7 @@
         {
             this.btn_Read = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_AddStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(313, 323);
             this.dataGridView1.TabIndex = 1;
             // 
+            // btn_AddStudent
+            // 
+            this.btn_AddStudent.Location = new System.Drawing.Point(649, 313);
+            this.btn_AddStudent.Name = "btn_AddStudent";
+            this.btn_AddStudent.Size = new System.Drawing.Size(150, 74);
+            this.btn_AddStudent.TabIndex = 2;
+            this.btn_AddStudent.Text = "Add Student";
+            this.btn_AddStudent.UseVisualStyleBackColor = true;
+            this.btn_AddStudent.Click += new System.EventHandler(this.btn_AddStudent_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 595);
+            this.Controls.Add(this.btn_AddStudent);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Read);
             this.Name = "Form1";
@@ -70,5 +82,6 @@
 
         private Button btn_Read;
         private DataGridView dataGridView1;
+        private Button btn_AddStudent;
     }
 }

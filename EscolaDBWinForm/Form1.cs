@@ -20,5 +20,28 @@ namespace EscolaDBWinForm
             }
             dataGridView1.DataSource = alunos;
         }
+
+        private void btn_AddStudent_Click(object sender, EventArgs e)
+        {
+            var aluno = new Aluno
+            {
+                NomeProprio = txtBox_NomeProprio.Text,
+                Apelido = txtBox_Apelido.Text,
+                DataNascimento = dateTimePicker1.Value,
+                Morada = txtBox_Morada.Text,
+                Email = txtBox_Email.Text,
+                Telefone = txtBox_Telefone.Text,
+                ReferenciaCurso = (int)comboBox1.SelectedValue
+            };
+
+            using (var context = new EscolaDbContext())
+            {
+                context.Alunos.Add(aluno);
+                context.SaveChanges();
+            }
+            alunos.Add(aluno);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = alunos;
+        }
     }
 }

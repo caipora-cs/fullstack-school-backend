@@ -1,0 +1,439 @@
+﻿namespace EscolaDBWinForm.View
+{
+    partial class AlunoView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tB_Search = new System.Windows.Forms.TextBox();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.dgv_Alunos = new System.Windows.Forms.DataGridView();
+            this.btn_AddAluno = new System.Windows.Forms.Button();
+            this.btn_EditAluno = new System.Windows.Forms.Button();
+            this.btn_DeleteAluno = new System.Windows.Forms.Button();
+            this.tb_NomeAluno = new System.Windows.Forms.TextBox();
+            this.tb_Apelido = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tb_Morada = new System.Windows.Forms.TextBox();
+            this.tb_Email = new System.Windows.Forms.TextBox();
+            this.tb_Telefone = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_Curso = new System.Windows.Forms.TextBox();
+            this.AnoCurso = new System.Windows.Forms.Label();
+            this.dTimeP_DataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.dTimeP_AnoCurso = new System.Windows.Forms.DateTimePicker();
+            this.numUpD_NumeroAluno = new System.Windows.Forms.NumericUpDown();
+            this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpD_NumeroAluno)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ALUNOS";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 58);
+            this.panel1.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(0, 64);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(800, 384);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btn_DeleteAluno);
+            this.tabPage1.Controls.Add(this.btn_EditAluno);
+            this.tabPage1.Controls.Add(this.btn_AddAluno);
+            this.tabPage1.Controls.Add(this.dgv_Alunos);
+            this.tabPage1.Controls.Add(this.btn_Search);
+            this.tabPage1.Controls.Add(this.tB_Search);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(792, 356);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Alunos Lista";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.numUpD_NumeroAluno);
+            this.tabPage2.Controls.Add(this.dTimeP_AnoCurso);
+            this.tabPage2.Controls.Add(this.dTimeP_DataNascimento);
+            this.tabPage2.Controls.Add(this.AnoCurso);
+            this.tabPage2.Controls.Add(this.tb_Curso);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.btn_Cancel);
+            this.tabPage2.Controls.Add(this.btn_Save);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.tb_Telefone);
+            this.tabPage2.Controls.Add(this.tb_Email);
+            this.tabPage2.Controls.Add(this.tb_Morada);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.tb_Apelido);
+            this.tabPage2.Controls.Add(this.tb_NomeAluno);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(792, 356);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Aluno Detalhe";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Procurar Aluno:";
+            // 
+            // tB_Search
+            // 
+            this.tB_Search.Location = new System.Drawing.Point(104, 9);
+            this.tB_Search.Name = "tB_Search";
+            this.tB_Search.Size = new System.Drawing.Size(462, 23);
+            this.tB_Search.TabIndex = 1;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(586, 9);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(75, 23);
+            this.btn_Search.TabIndex = 2;
+            this.btn_Search.Text = "Procurar";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            // 
+            // dgv_Alunos
+            // 
+            this.dgv_Alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Alunos.Location = new System.Drawing.Point(8, 38);
+            this.dgv_Alunos.Name = "dgv_Alunos";
+            this.dgv_Alunos.RowTemplate.Height = 25;
+            this.dgv_Alunos.Size = new System.Drawing.Size(653, 312);
+            this.dgv_Alunos.TabIndex = 3;
+            // 
+            // btn_AddAluno
+            // 
+            this.btn_AddAluno.Location = new System.Drawing.Point(667, 38);
+            this.btn_AddAluno.Name = "btn_AddAluno";
+            this.btn_AddAluno.Size = new System.Drawing.Size(119, 38);
+            this.btn_AddAluno.TabIndex = 4;
+            this.btn_AddAluno.Text = "Adicionar";
+            this.btn_AddAluno.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditAluno
+            // 
+            this.btn_EditAluno.Location = new System.Drawing.Point(667, 82);
+            this.btn_EditAluno.Name = "btn_EditAluno";
+            this.btn_EditAluno.Size = new System.Drawing.Size(119, 38);
+            this.btn_EditAluno.TabIndex = 5;
+            this.btn_EditAluno.Text = "Editar";
+            this.btn_EditAluno.UseVisualStyleBackColor = true;
+            // 
+            // btn_DeleteAluno
+            // 
+            this.btn_DeleteAluno.Location = new System.Drawing.Point(667, 126);
+            this.btn_DeleteAluno.Name = "btn_DeleteAluno";
+            this.btn_DeleteAluno.Size = new System.Drawing.Size(119, 42);
+            this.btn_DeleteAluno.TabIndex = 6;
+            this.btn_DeleteAluno.Text = "Deletar";
+            this.btn_DeleteAluno.UseVisualStyleBackColor = true;
+            // 
+            // tb_NomeAluno
+            // 
+            this.tb_NomeAluno.Location = new System.Drawing.Point(47, 103);
+            this.tb_NomeAluno.Name = "tb_NomeAluno";
+            this.tb_NomeAluno.Size = new System.Drawing.Size(159, 23);
+            this.tb_NomeAluno.TabIndex = 1;
+            // 
+            // tb_Apelido
+            // 
+            this.tb_Apelido.Location = new System.Drawing.Point(227, 103);
+            this.tb_Apelido.Name = "tb_Apelido";
+            this.tb_Apelido.Size = new System.Drawing.Size(164, 23);
+            this.tb_Apelido.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nome";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(227, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Apelido";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(48, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Data Nascimento";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 206);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 15);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Morada";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(51, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 15);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Email";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(270, 264);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 15);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Telefone";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(554, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 15);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Foto";
+            // 
+            // tb_Morada
+            // 
+            this.tb_Morada.Location = new System.Drawing.Point(47, 224);
+            this.tb_Morada.Name = "tb_Morada";
+            this.tb_Morada.Size = new System.Drawing.Size(344, 23);
+            this.tb_Morada.TabIndex = 11;
+            // 
+            // tb_Email
+            // 
+            this.tb_Email.Location = new System.Drawing.Point(51, 291);
+            this.tb_Email.Name = "tb_Email";
+            this.tb_Email.Size = new System.Drawing.Size(208, 23);
+            this.tb_Email.TabIndex = 12;
+            // 
+            // tb_Telefone
+            // 
+            this.tb_Telefone.Location = new System.Drawing.Point(270, 291);
+            this.tb_Telefone.Name = "tb_Telefone";
+            this.tb_Telefone.Size = new System.Drawing.Size(121, 23);
+            this.tb_Telefone.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(138, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 15);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Numero";
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(554, 281);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(88, 41);
+            this.btn_Save.TabIndex = 15;
+            this.btn_Save.Text = "SAVE";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(648, 281);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(93, 41);
+            this.btn_Cancel.TabIndex = 16;
+            this.btn_Cancel.Text = "CANCEL";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(554, 175);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 15);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Curso";
+            // 
+            // tb_Curso
+            // 
+            this.tb_Curso.Location = new System.Drawing.Point(554, 198);
+            this.tb_Curso.Name = "tb_Curso";
+            this.tb_Curso.Size = new System.Drawing.Size(187, 23);
+            this.tb_Curso.TabIndex = 18;
+            // 
+            // AnoCurso
+            // 
+            this.AnoCurso.AutoSize = true;
+            this.AnoCurso.Location = new System.Drawing.Point(560, 230);
+            this.AnoCurso.Name = "AnoCurso";
+            this.AnoCurso.Size = new System.Drawing.Size(29, 15);
+            this.AnoCurso.TabIndex = 19;
+            this.AnoCurso.Text = "Ano";
+            // 
+            // dTimeP_DataNascimento
+            // 
+            this.dTimeP_DataNascimento.Location = new System.Drawing.Point(51, 167);
+            this.dTimeP_DataNascimento.Name = "dTimeP_DataNascimento";
+            this.dTimeP_DataNascimento.Size = new System.Drawing.Size(200, 23);
+            this.dTimeP_DataNascimento.TabIndex = 21;
+            // 
+            // dTimeP_AnoCurso
+            // 
+            this.dTimeP_AnoCurso.Location = new System.Drawing.Point(554, 252);
+            this.dTimeP_AnoCurso.Name = "dTimeP_AnoCurso";
+            this.dTimeP_AnoCurso.Size = new System.Drawing.Size(187, 23);
+            this.dTimeP_AnoCurso.TabIndex = 22;
+            // 
+            // numUpD_NumeroAluno
+            // 
+            this.numUpD_NumeroAluno.Location = new System.Drawing.Point(47, 27);
+            this.numUpD_NumeroAluno.Name = "numUpD_NumeroAluno";
+            this.numUpD_NumeroAluno.Size = new System.Drawing.Size(85, 23);
+            this.numUpD_NumeroAluno.TabIndex = 23;
+            // 
+            // AlunoView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel1);
+            this.Name = "AlunoView";
+            this.Text = "AlunoView";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpD_NumeroAluno)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Label label1;
+        private Panel panel1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private Button btn_DeleteAluno;
+        private Button btn_EditAluno;
+        private Button btn_AddAluno;
+        private DataGridView dgv_Alunos;
+        private Button btn_Search;
+        private TextBox tB_Search;
+        private Label label2;
+        private TabPage tabPage2;
+        private TextBox tb_NomeAluno;
+        private Label label10;
+        private TextBox tb_Telefone;
+        private TextBox tb_Email;
+        private TextBox tb_Morada;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private TextBox tb_Apelido;
+        private Button btn_Cancel;
+        private Button btn_Save;
+        private TextBox tb_Curso;
+        private Label label11;
+        private Label AnoCurso;
+        private DateTimePicker dTimeP_AnoCurso;
+        private DateTimePicker dTimeP_DataNascimento;
+        private NumericUpDown numUpD_NumeroAluno;
+    }
+}
