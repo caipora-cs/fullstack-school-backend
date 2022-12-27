@@ -41,7 +41,8 @@ public partial class EscolaDbContext : DbContext
         modelBuilder.Entity<Aluno>(entity =>
         {
             entity.HasKey(e => e.Numero).HasName("PK_Aluno_numero");
-
+            //Ajust to be autoincremented in the migration
+            
             entity.Property(e => e.Numero).ValueGeneratedNever();
             entity.Property(e => e.Telefone).IsFixedLength();
 

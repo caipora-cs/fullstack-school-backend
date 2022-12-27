@@ -63,7 +63,7 @@ namespace EscolaDBWinForm.Controller
             model.Morada = _view.MoradaAluno;
             model.Email = _view.EmailAluno;
             model.Telefone = _view.TelefoneAluno;
-            model.ReferenciaCurso = Convert.ToInt32(_view.CursoAluno);
+            model.ReferenciaCurso = Convert.ToInt32(_view.CursoAluno);//Quebra quando escreve Nome do Curso
             //Apanha os possiveis Erros da operacao - sempre que houver ligacao direta de ir ou vir da DB convem ouvir os erros
             try
             {

@@ -4,6 +4,7 @@ using EscolaDBWinForm.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EscolaDBWinForm.Migrations
 {
     [DbContext(typeof(EscolaDbContext))]
-    partial class EscolaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221227163936_AutoIncrementonNumeroAluno")]
+    partial class AutoIncrementonNumeroAluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
