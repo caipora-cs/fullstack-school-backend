@@ -12,6 +12,8 @@ public partial class Aluno
 {
     [Key]
     [Column("numero")]
+    //Add Autoincrement
+    
     public int Numero { get; set; }
 
     [DisplayName("Curso")]

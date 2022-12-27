@@ -9,7 +9,7 @@ namespace EscolaDBWinForm.View
     public interface IAlunoView
     {
         //Propriedades - Fields
-        int NumeroAluno { get;} //Sem set method, tornar autoincremental
+        int NumeroAluno { get; set; } //Sem set method, tornar autoincremental
         string NomeAluno { get; set; }
         string ApelidoAluno { get; set; }
         DateTime IdadeAluno { get; set; }

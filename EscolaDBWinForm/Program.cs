@@ -25,9 +25,8 @@ namespace EscolaDBWinForm
             ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            IAlunoView view = new AlunoView();
-            IAluno model = new AlunoDbLogic();
-            new AlunoController(view, model);
+            IMainView view = new MainView();
+            new MainController(view);
             Application.Run((Form)view);
         }
 
