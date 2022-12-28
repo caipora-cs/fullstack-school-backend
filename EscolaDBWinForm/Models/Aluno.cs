@@ -12,8 +12,6 @@ public partial class Aluno
 {
     [Key]
     [Column("numero")]
-    //Make this key auto increment
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Numero { get; set; }
 
     [DisplayName("Curso")]

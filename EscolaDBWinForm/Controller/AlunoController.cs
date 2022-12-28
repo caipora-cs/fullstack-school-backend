@@ -56,7 +56,7 @@ namespace EscolaDBWinForm.Controller
         {
             //Cria uma nova instancia de Aluno e associa os valores do View ao Model
             var model = new Aluno();
-            model.Numero = _view.NumeroAluno;
+            model.Numero = Convert.ToInt32(_view.NumeroAluno); 
             model.NomeProprio = _view.NomeAluno;
             model.Apelido = _view.ApelidoAluno;
             model.DataNascimento = _view.IdadeAluno;
@@ -101,7 +101,10 @@ namespace EscolaDBWinForm.Controller
         //Limpa os dados do View
         private void ClearView()
         {
-            _view.NumeroAluno = 0;
+            //Apanha o Numero de Aluno do ultimo aluno adicionado e incrementa 1
+            var numeroAluno = _model.GetAll().LastOrDefault()?.Numero + 1 ?? 1;
+            _view.NumeroAluno = Convert.ToString(numeroAluno);
+            //Defaults
             _view.NomeAluno = "";
             _view.ApelidoAluno = "";
             _view.IdadeAluno = DateTime.Now;
@@ -137,7 +140,7 @@ namespace EscolaDBWinForm.Controller
             //Seleciona a linha do DataGridView e o objeto de data por baixo
             var aluno = (Aluno)alunosBindingSource.Current;
             //Apos selecionado, corresponde a data as textboxes da view
-            _view.NumeroAluno = aluno.Numero;
+            _view.NumeroAluno = Convert.ToString(aluno.Numero);
             _view.NomeAluno = aluno.NomeProprio;
             _view.ApelidoAluno = aluno.Apelido;
             _view.IdadeAluno = aluno.DataNascimento;
@@ -153,6 +156,7 @@ namespace EscolaDBWinForm.Controller
 
         private void AddNewAluno(object? sender, EventArgs e)
         {
+            ClearView();
             _view.IsEdit = false;
         }
 

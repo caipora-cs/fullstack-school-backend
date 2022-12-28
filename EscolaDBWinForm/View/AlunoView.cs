@@ -106,7 +106,7 @@ namespace EscolaDBWinForm.View
         }
 
         //Propriedades
-        public int NumeroAluno { get => (int)numUpD_NumeroAluno.Value; set => numUpD_NumeroAluno.Value = value; } //Sem set porque o valor é gerado automaticamente,TODO:Migrar propriedade autoincrement no Numero do Aluno Field
+        public string NumeroAluno { get => tb_NumeroAluno.Text; set => tb_NumeroAluno.Text = value; } //Sem set porque o valor é gerado automaticamente,TODO:Migrar propriedade autoincrement no Numero do Aluno Field
         public string NomeAluno { get => tb_NomeAluno.Text; set => tb_NomeAluno.Text = value; }
         public string ApelidoAluno { get => tb_Apelido.Text; set => tb_Apelido.Text = value; }
         public DateTime IdadeAluno { get => dTimeP_DataNascimento.Value; set => dTimeP_DataNascimento.Value = value; }

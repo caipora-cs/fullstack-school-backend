@@ -34,10 +34,24 @@ namespace EscolaDBWinForm.Data
             _context.SaveChanges();
         }
 
+         
         public void Edit(Aluno aluno)
         {
-            _context.Entry(aluno).State = EntityState.Modified;
+            //update aluno NomeProprio, Apelido , DataNascimento , Morada , Email , Telefone , Curso , AnoCurso where Numero = view NumeroAluno in Entity Framework 
+            //The instance of entity type "Aluno" cannot be tracked because another instance with the same key value {'Numero'} is already being tracked.
+            //Ensure that only one entity instance with a given key value is attached
+            //Fix it
+            
+            var alunoToUpdate = _context.Alunos.Find(aluno.Numero);
+            alunoToUpdate.NomeProprio = aluno.NomeProprio;
+            alunoToUpdate.Apelido = aluno.Apelido;
+            alunoToUpdate.DataNascimento = aluno.DataNascimento;
+            alunoToUpdate.Morada = aluno.Morada;
+            alunoToUpdate.Email = aluno.Email;
+            alunoToUpdate.Telefone = aluno.Telefone;
+            alunoToUpdate.ReferenciaCurso = aluno.ReferenciaCurso;
             _context.SaveChanges();
+            
         }
 
         public IEnumerable<Aluno> GetAll()

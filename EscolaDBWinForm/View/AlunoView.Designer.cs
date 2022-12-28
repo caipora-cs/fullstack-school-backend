@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_AlunosLista = new System.Windows.Forms.TabPage();
             this.btn_DeleteAluno = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             this.tB_Search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tab_AlunoDetalhe = new System.Windows.Forms.TabPage();
-            this.numUpD_NumeroAluno = new System.Windows.Forms.NumericUpDown();
+            this.tb_NumeroAluno = new System.Windows.Forms.TextBox();
             this.dTimeP_AnoCurso = new System.Windows.Forms.DateTimePicker();
             this.dTimeP_DataNascimento = new System.Windows.Forms.DateTimePicker();
             this.AnoCurso = new System.Windows.Forms.Label();
@@ -61,13 +62,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tb_Apelido = new System.Windows.Forms.TextBox();
             this.tb_NomeAluno = new System.Windows.Forms.TextBox();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_AlunosLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).BeginInit();
             this.tab_AlunoDetalhe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpD_NumeroAluno)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,6 +88,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 58);
             this.panel1.TabIndex = 1;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Close.Location = new System.Drawing.Point(750, 12);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(38, 36);
+            this.btn_Close.TabIndex = 7;
+            this.btn_Close.Text = "X";
+            this.btn_Close.UseVisualStyleBackColor = false;
             // 
             // tabControl1
             // 
@@ -189,7 +199,7 @@
             // 
             // tab_AlunoDetalhe
             // 
-            this.tab_AlunoDetalhe.Controls.Add(this.numUpD_NumeroAluno);
+            this.tab_AlunoDetalhe.Controls.Add(this.tb_NumeroAluno);
             this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_AnoCurso);
             this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_DataNascimento);
             this.tab_AlunoDetalhe.Controls.Add(this.AnoCurso);
@@ -218,13 +228,13 @@
             this.tab_AlunoDetalhe.Text = "Aluno Detalhe";
             this.tab_AlunoDetalhe.UseVisualStyleBackColor = true;
             // 
-            // numUpD_NumeroAluno
+            // tb_NumeroAluno
             // 
-            this.numUpD_NumeroAluno.Location = new System.Drawing.Point(47, 27);
-            this.numUpD_NumeroAluno.Name = "numUpD_NumeroAluno";
-            this.numUpD_NumeroAluno.ReadOnly = true;
-            this.numUpD_NumeroAluno.Size = new System.Drawing.Size(85, 23);
-            this.numUpD_NumeroAluno.TabIndex = 23;
+            this.tb_NumeroAluno.Location = new System.Drawing.Point(47, 30);
+            this.tb_NumeroAluno.Name = "tb_NumeroAluno";
+            this.tb_NumeroAluno.ReadOnly = true;
+            this.tb_NumeroAluno.Size = new System.Drawing.Size(102, 23);
+            this.tb_NumeroAluno.TabIndex = 24;
             // 
             // dTimeP_AnoCurso
             // 
@@ -286,7 +296,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(138, 30);
+            this.label10.Location = new System.Drawing.Point(155, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 15);
             this.label10.TabIndex = 14;
@@ -390,17 +400,6 @@
             this.tb_NomeAluno.Size = new System.Drawing.Size(159, 23);
             this.tb_NomeAluno.TabIndex = 1;
             // 
-            // btn_Close
-            // 
-            this.btn_Close.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Close.Location = new System.Drawing.Point(750, 12);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(38, 36);
-            this.btn_Close.TabIndex = 7;
-            this.btn_Close.Text = "X";
-            this.btn_Close.UseVisualStyleBackColor = false;
-            // 
             // AlunoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -418,7 +417,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).EndInit();
             this.tab_AlunoDetalhe.ResumeLayout(false);
             this.tab_AlunoDetalhe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpD_NumeroAluno)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,7 +455,7 @@
         private Label AnoCurso;
         private DateTimePicker dTimeP_AnoCurso;
         private DateTimePicker dTimeP_DataNascimento;
-        private NumericUpDown numUpD_NumeroAluno;
         private Button btn_Close;
+        private TextBox tb_NumeroAluno;
     }
 }
