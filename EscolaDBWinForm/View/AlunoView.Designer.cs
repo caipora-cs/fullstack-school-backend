@@ -281,7 +281,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(93, 41);
             this.btn_Cancel.TabIndex = 16;
-            this.btn_Cancel.Text = "CANCEL";
+            this.btn_Cancel.Text = "Cancelar";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
             // btn_Save
@@ -290,13 +290,13 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(88, 41);
             this.btn_Save.TabIndex = 15;
-            this.btn_Save.Text = "SAVE";
+            this.btn_Save.Text = "Salvar";
             this.btn_Save.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(155, 33);
+            this.label10.Location = new System.Drawing.Point(72, 12);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 15);
             this.label10.TabIndex = 14;
