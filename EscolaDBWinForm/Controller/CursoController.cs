@@ -115,13 +115,14 @@ namespace EscolaDBWinForm.Controller
 
                 //Remove o curso
                 _model.Delete(curso.Referencia);
+                 //Mostra a mensagem de sucesso
+                _view.Message = "Curso removido com sucesso!";
+                _view.IsSuccessful = true;
                 //Atualiza a lista de curso
                 LoadCursosList();
                 //Limpa o View
                 ClearView();
-                //Mostra a mensagem de sucesso
-                _view.Message = "Curso removido com sucesso!";
-                _view.IsSuccessful = true;
+               
             }
             catch (Exception ex)
             {

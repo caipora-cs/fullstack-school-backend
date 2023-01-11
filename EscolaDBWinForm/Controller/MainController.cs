@@ -18,6 +18,14 @@ namespace EscolaDBWinForm.Controller
         {
             this.mainView = mainView;
             this.mainView.ShowAlunosView += ShowAlunoView;
+            this.mainView.ShowCursosView += ShowCursoView;
+        }
+
+        private void ShowCursoView(object? sender, EventArgs e)
+        {
+            ICursoView view = CursoView.GetInstance((MainView)mainView);
+            ICurso model = new CursoDbLogic();
+            new CursoController(view, model);
         }
 
         private void ShowAlunoView(object? sender, EventArgs e)

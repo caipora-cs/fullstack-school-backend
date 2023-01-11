@@ -60,6 +60,9 @@ namespace EscolaDBWinForm.View
                 //Quando clickado adiciona a tab de detalhe
                 tabControl1.TabPages.Add(tab_CursoDetalhe);
                 tab_CursoDetalhe.Text = "Editar Curso";
+                //Faz o campo tb_Referencia read only para evitar acesso indevido
+                tb_Referencia.ReadOnly = true;
+
             };
             //Associa o evento de click do botao Cancelar
             btn_Cancel.Click += delegate
@@ -87,7 +90,6 @@ namespace EscolaDBWinForm.View
             //Associa o evento de click do botao Eliminar
             btn_DeleteCurso.Click += delegate
             {
-                DeleteEvent?.Invoke(this, EventArgs.Empty);
                 var answer = MessageBox.Show("Tem a certeza que deseja deletar o Curso selecionado?","Atencao",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (answer == DialogResult.Yes)
@@ -107,8 +109,10 @@ namespace EscolaDBWinForm.View
     //Propriedades
     public string ReferenciaCurso
         {
+            //The call to the DbSet should be an integer, do the needed convertions
             get { return tb_Referencia.Text; }
             set { tb_Referencia.Text = value; }
+              
         }
         public string NomeCurso
         {

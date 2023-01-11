@@ -30,11 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_AlunosView = new System.Windows.Forms.Button();
+            this.btn_CursosView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_CursosView);
             this.panel1.Controls.Add(this.btn_AlunosView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -50,6 +52,15 @@
             this.btn_AlunosView.TabIndex = 0;
             this.btn_AlunosView.Text = "Alunos";
             this.btn_AlunosView.UseVisualStyleBackColor = true;
+            // 
+            // btn_CursosView
+            // 
+            this.btn_CursosView.Location = new System.Drawing.Point(0, 104);
+            this.btn_CursosView.Name = "btn_CursosView";
+            this.btn_CursosView.Size = new System.Drawing.Size(200, 51);
+            this.btn_CursosView.TabIndex = 1;
+            this.btn_CursosView.Text = "Cursos";
+            this.btn_CursosView.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -69,5 +80,6 @@
 
         private Panel panel1;
         private Button btn_AlunosView;
+        private Button btn_CursosView;
     }
 }

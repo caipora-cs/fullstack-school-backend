@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EscolaDBWinForm.Data
 {
-    internal class CursoDbLogic: EscolaDbContext, ICurso
+    internal class CursoDbLogic : EscolaDbContext, ICurso
     {
         private EscolaDbContext _context;
 
@@ -31,11 +31,14 @@ namespace EscolaDBWinForm.Data
 
         public void Edit(Curso curso)
         {
+            // var cursoToUpdate = _context.Cursos.Find(curso.Referencia);
+            //No caso do curso, as vezes sera necessario alterar referencia, portanto adicionamos a seguinte condicao
+            //'Object reference not set to an instance of an object.' fix it
             var cursoToUpdate = _context.Cursos.Find(curso.Referencia);
-            cursoToUpdate.Nome = curso.Nome;
-            cursoToUpdate.Sigla = curso.Sigla;
-            cursoToUpdate.DataInicio = curso.DataInicio;
-            _context.SaveChanges();
+                cursoToUpdate.Nome = curso.Nome;
+                cursoToUpdate.Sigla = curso.Sigla;
+                cursoToUpdate.DataInicio = curso.DataInicio;
+                _context.SaveChanges();
         }
 
         public IEnumerable<Curso> GetAll()
