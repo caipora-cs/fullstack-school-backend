@@ -158,12 +158,12 @@ namespace EscolaDBWinForm.Controller
             {
                 //Pesquisa por valor
                 cursoList = _model.GetByValue(this._view.SearchValue);
-                //Update da lista de alunos
+                //Update da lista 
                 cursosBindingSource.DataSource = cursoList;
             }
             else
             {
-                //Carrega a lista de alunos no View
+                //Carrega a lista no View
                 LoadCursosList();
             }
         }

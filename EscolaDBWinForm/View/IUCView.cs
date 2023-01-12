@@ -24,7 +24,7 @@ namespace EscolaDBWinForm.View
         //Curso CursoUC { get; set; }
 
         //ICollection dos Alunos da UC (Inscricoes)
-        ICollection<Inscricao> UnidadeCurricularCurso { get;}
+        ICollection<Inscricao> AlunosUC { get;}
 
 
         //State
