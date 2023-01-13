@@ -26,7 +26,7 @@ namespace EscolaDBWinForm.Controller
             cursoList = new List<Curso>();
             ucList = new List<UnidadeCurricular>();
 
-            //Events
+            //Liga Events do View ao Controller
             _view.SearchEvent += SearchCurso;
             _view.AddNewEvent += AddNewCurso;
             _view.EditEvent += LoadSelectedtoEditCurso;
