@@ -19,12 +19,12 @@ namespace EscolaDBWinForm.View
             //Delegates are used to pass methods as arguments to other methods. Event handlers are nothing more than methods that are invoked through delegates.
             btn_AlunosView.Click += delegate { ShowAlunosView?.Invoke(this, EventArgs.Empty); };
             btn_CursosView.Click += delegate { ShowCursosView?.Invoke(this, EventArgs.Empty); };
+            btn_UCsView.Click += delegate { ShowUnidadeCurricularView?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler ShowAlunosView;
         public event EventHandler ShowCursosView;
-        public event EventHandler ShowUnidadeCurricular;
-        public event EventHandler ShowCurso;
+        public event EventHandler ShowUnidadeCurricularView;
         public event EventHandler ShowDocente;
         public event EventHandler ShowInscricao;
         public event EventHandler ShowAnoLetivo;

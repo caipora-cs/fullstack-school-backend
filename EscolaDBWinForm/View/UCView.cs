@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace EscolaDBWinForm.View
 {
-    public partial class UCView : Form
+    public partial class UCView : Form, IUCView
     {
         //Propriedades
         private string message;

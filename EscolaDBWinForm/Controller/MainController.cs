@@ -19,6 +19,7 @@ namespace EscolaDBWinForm.Controller
             this.mainView = mainView;
             this.mainView.ShowAlunosView += ShowAlunoView;
             this.mainView.ShowCursosView += ShowCursoView;
+            this.mainView.ShowUnidadeCurricularView += ShowUnidadeCurricularView;
         }
 
         private void ShowCursoView(object? sender, EventArgs e)
@@ -34,6 +35,13 @@ namespace EscolaDBWinForm.Controller
             IAluno model = new AlunoDbLogic();
             new AlunoController(view, model);
 ;
+        }
+
+        private void ShowUnidadeCurricularView(object? sender, EventArgs e)
+        {
+            IUCView view = UCView.GetInstance((MainView)mainView);
+            IUnidadeCurricular model = new UCDbLogic();
+            new UCController(view, model);
         }
     }
 }

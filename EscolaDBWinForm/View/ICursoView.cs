@@ -10,7 +10,7 @@ namespace EscolaDBWinForm.View
     internal interface ICursoView
     {
         //Propriedades
-        string ReferenciaCurso { get; set; }
+        int ReferenciaCurso { get; set; }
         string NomeCurso { get; set; }
         string SiglaCurso { get; set; }
         DateTime DataInicioCurso { get; set; }
@@ -31,9 +31,11 @@ namespace EscolaDBWinForm.View
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler SelectEvent;
 
         //Metodos 
         void SetCursoListBindingSource(BindingSource cursoList);
+        void SetUnidadeCurricularListBindingSource(BindingSource ucList);
         void Show(); 
     }
 }

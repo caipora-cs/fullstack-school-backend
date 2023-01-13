@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_AlunosView = new System.Windows.Forms.Button();
+            this.btn_UCsView = new System.Windows.Forms.Button();
             this.btn_CursosView = new System.Windows.Forms.Button();
+            this.btn_AlunosView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_UCsView);
             this.panel1.Controls.Add(this.btn_CursosView);
             this.panel1.Controls.Add(this.btn_AlunosView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -44,14 +46,14 @@
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
             // 
-            // btn_AlunosView
+            // btn_UCsView
             // 
-            this.btn_AlunosView.Location = new System.Drawing.Point(0, 61);
-            this.btn_AlunosView.Name = "btn_AlunosView";
-            this.btn_AlunosView.Size = new System.Drawing.Size(200, 47);
-            this.btn_AlunosView.TabIndex = 0;
-            this.btn_AlunosView.Text = "Alunos";
-            this.btn_AlunosView.UseVisualStyleBackColor = true;
+            this.btn_UCsView.Location = new System.Drawing.Point(0, 152);
+            this.btn_UCsView.Name = "btn_UCsView";
+            this.btn_UCsView.Size = new System.Drawing.Size(200, 51);
+            this.btn_UCsView.TabIndex = 2;
+            this.btn_UCsView.Text = "Unidades Curricular";
+            this.btn_UCsView.UseVisualStyleBackColor = true;
             // 
             // btn_CursosView
             // 
@@ -61,6 +63,15 @@
             this.btn_CursosView.TabIndex = 1;
             this.btn_CursosView.Text = "Cursos";
             this.btn_CursosView.UseVisualStyleBackColor = true;
+            // 
+            // btn_AlunosView
+            // 
+            this.btn_AlunosView.Location = new System.Drawing.Point(0, 61);
+            this.btn_AlunosView.Name = "btn_AlunosView";
+            this.btn_AlunosView.Size = new System.Drawing.Size(200, 47);
+            this.btn_AlunosView.TabIndex = 0;
+            this.btn_AlunosView.Text = "Alunos";
+            this.btn_AlunosView.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -81,5 +92,6 @@
         private Panel panel1;
         private Button btn_AlunosView;
         private Button btn_CursosView;
+        private Button btn_UCsView;
     }
 }

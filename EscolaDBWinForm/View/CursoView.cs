@@ -25,6 +25,7 @@ namespace EscolaDBWinForm.View
             MatchAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tab_CursoDetalhe);
             btn_Close.Click += delegate { this.Close(); };
+            //Inicializa a gridview com a primeira linha selecionada
         }
 
         private void MatchAndRaiseViewEvents()
@@ -102,17 +103,18 @@ namespace EscolaDBWinForm.View
  
             };
 
+            //Quando um item da gridview for selecionado, entao chama o evento de selecionar
+            dgView_CursosLista.SelectionChanged += delegate { SelectEvent?.Invoke(this, EventArgs.Empty); };
+
         }
                   
 
 
     //Propriedades
-    public string ReferenciaCurso
+    public int ReferenciaCurso
         {
-            //The call to the DbSet should be an integer, do the needed convertions
-            get { return tb_Referencia.Text; }
-            set { tb_Referencia.Text = value; }
-              
+            get { return Convert.ToInt32(tb_Referencia.Text); }
+            set { tb_Referencia.Text = value.ToString(); }
         }
         public string NomeCurso
         {
@@ -164,13 +166,19 @@ namespace EscolaDBWinForm.View
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler SelectEvent;
 
         //Metodos 
         public void SetCursoListBindingSource(BindingSource cursoList)
         {
             dgView_CursosLista.DataSource = cursoList;
         }
-        
+
+        public void SetUnidadeCurricularListBindingSource(BindingSource ucList)
+        {
+            dgView_UC.DataSource = ucList;
+        }
+
         //Single Page enforcer: Abre um form apenas.
         private static CursoView instance;
         //Metodo aceita um parent container para ser instanciado em MDI single page 

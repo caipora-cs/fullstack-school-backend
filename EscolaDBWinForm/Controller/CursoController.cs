@@ -13,14 +13,18 @@ namespace EscolaDBWinForm.Controller
         private ICursoView _view;
         private ICurso _model;
         private BindingSource cursosBindingSource;
+        private BindingSource ucfromcursosBindingSource;
         private IEnumerable<Curso> cursoList;
+        private ICollection<UnidadeCurricular> ucList;
 
         public CursoController(ICursoView view, ICurso model)
         {
             _view = view;
             _model = model;
             cursosBindingSource = new BindingSource();
+            ucfromcursosBindingSource = new BindingSource();
             cursoList = new List<Curso>();
+            ucList = new List<UnidadeCurricular>();
 
             //Events
             _view.SearchEvent += SearchCurso;
@@ -29,12 +33,27 @@ namespace EscolaDBWinForm.Controller
             _view.DeleteEvent += DeleteCurso;
             _view.SaveEvent += SaveCurso;
             _view.CancelEvent += CancelAction;
+            _view.SelectEvent += SelectAction;
 
-            //Liga BindingSource
+            //Liga BindingSource para as GridViews
             _view.SetCursoListBindingSource(cursosBindingSource);
+            _view.SetUnidadeCurricularListBindingSource(ucfromcursosBindingSource);
 
             LoadCursosList();
             _view.Show();
+        }
+
+        private void SelectAction(object? sender, EventArgs e)
+        {
+            //Ao selecionar um curso na gridview, mostra suas UCs na segunda gridview utilizando o metodo GetUCs(int id)
+            //Evitar null type aqui devido a exceptions
+
+            var model = (Curso)cursosBindingSource.Current;
+            if (model != null)
+            {
+                ucList = _model.GetUCs(model.Referencia);
+                ucfromcursosBindingSource.DataSource = ucList;
+            }
         }
 
         private void LoadCursosList()
@@ -52,7 +71,7 @@ namespace EscolaDBWinForm.Controller
         {
             //Cria uma nova instancia de Curso e associa os valores do View ao Model
             var model = new Curso();
-            model.Referencia = Convert.ToInt32(_view.ReferenciaCurso);
+            model.Referencia = _view.ReferenciaCurso;
             model.Nome = _view.NomeCurso;
             model.Sigla = _view.SiglaCurso;
             model.DataInicio = _view.DataInicioCurso;
@@ -97,7 +116,7 @@ namespace EscolaDBWinForm.Controller
 
             //Apanha o Numero de Curso do ultimo curso adicionado e incrementa 1
             var modelCurso = _model.GetAll().LastOrDefault()?.Referencia + 1 ?? 1;
-            _view.ReferenciaCurso = Convert.ToString(modelCurso);
+            _view.ReferenciaCurso = modelCurso;
             //Defaults
             _view.NomeCurso = string.Empty;
             _view.SiglaCurso = string.Empty;
@@ -115,14 +134,14 @@ namespace EscolaDBWinForm.Controller
 
                 //Remove o curso
                 _model.Delete(curso.Referencia);
-                 //Mostra a mensagem de sucesso
+                //Mostra a mensagem de sucesso
                 _view.Message = "Curso removido com sucesso!";
                 _view.IsSuccessful = true;
                 //Atualiza a lista de curso
                 LoadCursosList();
                 //Limpa o View
                 ClearView();
-               
+
             }
             catch (Exception ex)
             {
@@ -137,7 +156,7 @@ namespace EscolaDBWinForm.Controller
             //Apanha o curso selecionado no View
             var curso = (Curso)cursosBindingSource.Current;
             //Atribui os valores do curso selecionado ao View
-            _view.ReferenciaCurso = Convert.ToString(curso.Referencia);
+            _view.ReferenciaCurso = curso.Referencia;
             _view.NomeCurso = curso.Nome;
             _view.SiglaCurso = curso.Sigla;
             _view.DataInicioCurso = curso.DataInicio;

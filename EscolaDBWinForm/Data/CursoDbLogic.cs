@@ -51,5 +51,11 @@ namespace EscolaDBWinForm.Data
             return _context.Cursos.Where(c => c.Nome.Contains(value) || c.Sigla.Contains(value)).ToList();
         }
 
+        //Busca todas as UCs de um curso para apresentar na gridview
+        public ICollection<UnidadeCurricular> GetUCs(int id)
+        {
+            return _context.UnidadeCurriculars.Where(uc => uc.ReferenciaCurso == id).ToList();
+        }
+
     }
 }
