@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_EEpocaLista = new System.Windows.Forms.TabPage();
-            this.tab_EEpocaDetalhe = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_Search = new System.Windows.Forms.TextBox();
-            this.btn_Close = new System.Windows.Forms.Button();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.btn_AddEEpoca = new System.Windows.Forms.Button();
-            this.btn_EditEEpoca = new System.Windows.Forms.Button();
-            this.btn_DeleteEEpoca = new System.Windows.Forms.Button();
             this.dgView_EEpoca = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tb_IdEEpoca = new System.Windows.Forms.TextBox();
-            this.tb_DescricaoEEpoca = new System.Windows.Forms.TextBox();
-            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_DeleteEEpoca = new System.Windows.Forms.Button();
+            this.btn_EditEEpoca = new System.Windows.Forms.Button();
+            this.btn_AddEEpoca = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.tb_Search = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tab_EEpocaDetalhe = new System.Windows.Forms.TabPage();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.tb_DescricaoEEpoca = new System.Windows.Forms.TextBox();
+            this.tb_IdEEpoca = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_EEpocaLista.SuspendLayout();
-            this.tab_EEpocaDetalhe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_EEpoca)).BeginInit();
+            this.tab_EEpocaDetalhe.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(855, 76);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Close.Location = new System.Drawing.Point(801, 25);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(34, 27);
+            this.btn_Close.TabIndex = 2;
+            this.btn_Close.Text = "X";
+            this.btn_Close.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -101,6 +111,67 @@
             this.tab_EEpocaLista.Text = "Estado Lista";
             this.tab_EEpocaLista.UseVisualStyleBackColor = true;
             // 
+            // dgView_EEpoca
+            // 
+            this.dgView_EEpoca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_EEpoca.Location = new System.Drawing.Point(3, 38);
+            this.dgView_EEpoca.Name = "dgView_EEpoca";
+            this.dgView_EEpoca.RowTemplate.Height = 25;
+            this.dgView_EEpoca.Size = new System.Drawing.Size(716, 319);
+            this.dgView_EEpoca.TabIndex = 6;
+            // 
+            // btn_DeleteEEpoca
+            // 
+            this.btn_DeleteEEpoca.Location = new System.Drawing.Point(725, 129);
+            this.btn_DeleteEEpoca.Name = "btn_DeleteEEpoca";
+            this.btn_DeleteEEpoca.Size = new System.Drawing.Size(119, 42);
+            this.btn_DeleteEEpoca.TabIndex = 5;
+            this.btn_DeleteEEpoca.Text = "Deletar";
+            this.btn_DeleteEEpoca.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditEEpoca
+            // 
+            this.btn_EditEEpoca.Location = new System.Drawing.Point(725, 84);
+            this.btn_EditEEpoca.Name = "btn_EditEEpoca";
+            this.btn_EditEEpoca.Size = new System.Drawing.Size(119, 39);
+            this.btn_EditEEpoca.TabIndex = 4;
+            this.btn_EditEEpoca.Text = "Editar";
+            this.btn_EditEEpoca.UseVisualStyleBackColor = true;
+            // 
+            // btn_AddEEpoca
+            // 
+            this.btn_AddEEpoca.Location = new System.Drawing.Point(725, 38);
+            this.btn_AddEEpoca.Name = "btn_AddEEpoca";
+            this.btn_AddEEpoca.Size = new System.Drawing.Size(119, 40);
+            this.btn_AddEEpoca.TabIndex = 3;
+            this.btn_AddEEpoca.Text = "Adicionar";
+            this.btn_AddEEpoca.UseVisualStyleBackColor = true;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(563, 9);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(156, 23);
+            this.btn_Search.TabIndex = 2;
+            this.btn_Search.Text = "Procurar";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            // 
+            // tb_Search
+            // 
+            this.tb_Search.Location = new System.Drawing.Point(162, 9);
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.Size = new System.Drawing.Size(395, 23);
+            this.tb_Search.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Procurar Estados de Epoca:";
+            // 
             // tab_EEpocaDetalhe
             // 
             this.tab_EEpocaDetalhe.Controls.Add(this.btn_Cancel);
@@ -117,108 +188,14 @@
             this.tab_EEpocaDetalhe.Text = "Estado Detalhe";
             this.tab_EEpocaDetalhe.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btn_Cancel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Procurar Estados de Epoca:";
-            // 
-            // tb_Search
-            // 
-            this.tb_Search.Location = new System.Drawing.Point(162, 9);
-            this.tb_Search.Name = "tb_Search";
-            this.tb_Search.Size = new System.Drawing.Size(395, 23);
-            this.tb_Search.TabIndex = 1;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Close.Location = new System.Drawing.Point(801, 25);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(34, 27);
-            this.btn_Close.TabIndex = 2;
-            this.btn_Close.Text = "X";
-            this.btn_Close.UseVisualStyleBackColor = true;
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.Location = new System.Drawing.Point(576, 9);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(109, 23);
-            this.btn_Search.TabIndex = 2;
-            this.btn_Search.Text = "Procurar";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            // 
-            // btn_AddEEpoca
-            // 
-            this.btn_AddEEpoca.Location = new System.Drawing.Point(725, 38);
-            this.btn_AddEEpoca.Name = "btn_AddEEpoca";
-            this.btn_AddEEpoca.Size = new System.Drawing.Size(119, 40);
-            this.btn_AddEEpoca.TabIndex = 3;
-            this.btn_AddEEpoca.Text = "Adicionar";
-            this.btn_AddEEpoca.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditEEpoca
-            // 
-            this.btn_EditEEpoca.Location = new System.Drawing.Point(725, 84);
-            this.btn_EditEEpoca.Name = "btn_EditEEpoca";
-            this.btn_EditEEpoca.Size = new System.Drawing.Size(119, 39);
-            this.btn_EditEEpoca.TabIndex = 4;
-            this.btn_EditEEpoca.Text = "Editar";
-            this.btn_EditEEpoca.UseVisualStyleBackColor = true;
-            // 
-            // btn_DeleteEEpoca
-            // 
-            this.btn_DeleteEEpoca.Location = new System.Drawing.Point(725, 129);
-            this.btn_DeleteEEpoca.Name = "btn_DeleteEEpoca";
-            this.btn_DeleteEEpoca.Size = new System.Drawing.Size(119, 42);
-            this.btn_DeleteEEpoca.TabIndex = 5;
-            this.btn_DeleteEEpoca.Text = "Deletar";
-            this.btn_DeleteEEpoca.UseVisualStyleBackColor = true;
-            // 
-            // dgView_EEpoca
-            // 
-            this.dgView_EEpoca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_EEpoca.Location = new System.Drawing.Point(3, 38);
-            this.dgView_EEpoca.Name = "dgView_EEpoca";
-            this.dgView_EEpoca.RowTemplate.Height = 25;
-            this.dgView_EEpoca.Size = new System.Drawing.Size(716, 319);
-            this.dgView_EEpoca.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Id:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Descricao";
-            // 
-            // tb_IdEEpoca
-            // 
-            this.tb_IdEEpoca.Location = new System.Drawing.Point(43, 56);
-            this.tb_IdEEpoca.Name = "tb_IdEEpoca";
-            this.tb_IdEEpoca.Size = new System.Drawing.Size(105, 23);
-            this.tb_IdEEpoca.TabIndex = 2;
-            // 
-            // tb_DescricaoEEpoca
-            // 
-            this.tb_DescricaoEEpoca.Location = new System.Drawing.Point(43, 130);
-            this.tb_DescricaoEEpoca.Name = "tb_DescricaoEEpoca";
-            this.tb_DescricaoEEpoca.Size = new System.Drawing.Size(496, 23);
-            this.tb_DescricaoEEpoca.TabIndex = 3;
+            this.btn_Cancel.Location = new System.Drawing.Point(729, 285);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(87, 48);
+            this.btn_Cancel.TabIndex = 5;
+            this.btn_Cancel.Text = "Cancelar";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
             // btn_Save
             // 
@@ -229,14 +206,37 @@
             this.btn_Save.Text = "Salvar";
             this.btn_Save.UseVisualStyleBackColor = true;
             // 
-            // btn_Cancel
+            // tb_DescricaoEEpoca
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(729, 285);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(87, 48);
-            this.btn_Cancel.TabIndex = 5;
-            this.btn_Cancel.Text = "Cancelar";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.tb_DescricaoEEpoca.Location = new System.Drawing.Point(43, 130);
+            this.tb_DescricaoEEpoca.Name = "tb_DescricaoEEpoca";
+            this.tb_DescricaoEEpoca.Size = new System.Drawing.Size(496, 23);
+            this.tb_DescricaoEEpoca.TabIndex = 3;
+            // 
+            // tb_IdEEpoca
+            // 
+            this.tb_IdEEpoca.Location = new System.Drawing.Point(43, 56);
+            this.tb_IdEEpoca.Name = "tb_IdEEpoca";
+            this.tb_IdEEpoca.Size = new System.Drawing.Size(105, 23);
+            this.tb_IdEEpoca.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Descricao";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Id";
             // 
             // EstadoEpocaView
             // 
@@ -252,9 +252,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_EEpocaLista.ResumeLayout(false);
             this.tab_EEpocaLista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_EEpoca)).EndInit();
             this.tab_EEpocaDetalhe.ResumeLayout(false);
             this.tab_EEpocaDetalhe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_EEpoca)).EndInit();
             this.ResumeLayout(false);
 
         }
