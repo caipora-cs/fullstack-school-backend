@@ -7,12 +7,13 @@ using EscolaDBWinForm.Models;
 
 namespace EscolaDBWinForm.View
 {
-    internal interface IEstadoEpocaView
+    internal interface IAnoLetivoView
     {
         //Propriedades
-        short IdEEpoca { get; set; }
-        string DescricaoEEpoca { get; set; }
-        ICollection<Inscricao> InscricaosEpoca { get; }
+        short IdAno { get; set; }
+        short AnoLetivoInicial { get; set; }
+        short AnoLetivoFinal { get; set; }
+        ICollection<Inscricao> InscricaosAnoLetivo { get; }
         //State
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -28,8 +29,9 @@ namespace EscolaDBWinForm.View
         event EventHandler CancelEvent;
 
         //Metodos 
-        void SetEEpocaListBindingSource(BindingSource e_epoca);
+        void SetAnoLetivoListBindingSource(BindingSource e_epoca);
         void Show(); 
+
 
     }
 }
