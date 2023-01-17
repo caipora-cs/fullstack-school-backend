@@ -13,16 +13,18 @@ namespace EscolaDBWinForm.Controller
         private IEstadoEpocaView _view;
         private IEstadoEpoca _model;
         private BindingSource eepocaBindingSource;
+        private BindingSource inscricaoBindingSource;
         private IEnumerable<EstadoEpoca> eepocaList;
-        //private ICollection<Inscricao> inscricaoList;
+        private ICollection<Inscricao> inscricaoList;
 
         public EstadoEpocaController(IEstadoEpocaView view, IEstadoEpoca model)
         {
             _view = view;
             _model = model;
             eepocaBindingSource = new BindingSource();
+            inscricaoBindingSource = new BindingSource();
             eepocaList = new List<EstadoEpoca>();
-            //inscricaoList = new List<Inscricao>();
+            inscricaoList = new List<Inscricao>();
 
             //Eventos
             _view.SearchEvent += SearchEEpoca;
@@ -31,14 +33,25 @@ namespace EscolaDBWinForm.Controller
             _view.DeleteEvent += DeleteEEpoca;
             _view.SaveEvent += SaveEEpoca;
             _view.CancelEvent += CancelAction;
+            _view.SelectEvent += LoadSelectedInscricao;
 
             //Liga BindingSource para as GridViews
             _view.SetEEpocaListBindingSource(eepocaBindingSource);
+            _view.SetInscricaoListBindingSource(inscricaoBindingSource);
 
             LoadEEpocaList();
             _view.Show();
         }
 
+        private void LoadSelectedInscricao(object? sender, EventArgs e)
+        {
+            var model = (EstadoEpoca)eepocaBindingSource.Current;
+            if (model != null)
+            {
+                inscricaoList = _model.GetInscricao(model.Id);
+                inscricaoBindingSource.DataSource = inscricaoList;
+            }
+        }
 
         private void LoadEEpocaList()
         {

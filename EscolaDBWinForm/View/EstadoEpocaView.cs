@@ -84,6 +84,12 @@ namespace EscolaDBWinForm.View
                     MessageBox.Show(Message);
                 }
             };
+
+            dgView_EEpoca.SelectionChanged += delegate
+            {
+                SelectEvent?.Invoke(this, EventArgs.Empty);
+            };
+
         }
 
 
@@ -98,6 +104,11 @@ namespace EscolaDBWinForm.View
         {
             get { return tb_DescricaoEEpoca.Text; }
             set { tb_DescricaoEEpoca.Text = value; }
+        }
+
+        public ICollection<Inscricao> InscricaosEpoca
+        {
+            get { return (ICollection<Inscricao>)dgView_Inscricoes.DataSource; }
         }
 
         //State
@@ -139,6 +150,11 @@ namespace EscolaDBWinForm.View
         public void SetEEpocaListBindingSource(BindingSource e_epoca)
         {
             dgView_EEpoca.DataSource = e_epoca;
+        }
+
+        public void SetInscricaoListBindingSource(BindingSource inscricaoList)
+        {
+            dgView_Inscricoes.DataSource = inscricaoList;
         }
 
         //Singleton

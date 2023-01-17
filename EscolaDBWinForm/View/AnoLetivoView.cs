@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscolaDBWinForm.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,6 +83,9 @@ namespace EscolaDBWinForm.View
                 }
 
             };
+
+
+            dgView_Ano.SelectionChanged += delegate { SelectEvent?.Invoke(this, EventArgs.Empty); };
         }
 
         //Propriedades
@@ -101,6 +105,11 @@ namespace EscolaDBWinForm.View
         {
             get { return Convert.ToInt16(tb_AnoFinal.Text); }
             set { tb_AnoFinal.Text = value.ToString(); }
+        }
+
+        public ICollection<Inscricao> InscricaosAnoLetivo
+        {
+            get { return (ICollection<Inscricao>)dgView_Inscricoes.DataSource; }
         }
 
         public string SearchValue
@@ -140,6 +149,11 @@ namespace EscolaDBWinForm.View
         public void SetAnoLetivoListBindingSource(BindingSource ano)
         {
             dgView_Ano.DataSource = ano;
+        }
+
+        public void SetInscricaoListBindingSource(BindingSource inscricaoList)
+        {
+            dgView_Inscricoes.DataSource = inscricaoList;
         }
 
         //Singleton

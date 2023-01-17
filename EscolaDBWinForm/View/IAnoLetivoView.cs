@@ -27,9 +27,11 @@ namespace EscolaDBWinForm.View
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler SelectEvent;
 
         //Metodos 
-        void SetAnoLetivoListBindingSource(BindingSource e_epoca);
+        void SetAnoLetivoListBindingSource(BindingSource ano);
+        void SetInscricaoListBindingSource(BindingSource inscricaoList);
         void Show(); 
 
 

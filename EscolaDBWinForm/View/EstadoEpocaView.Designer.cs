@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_EEpocaLista = new System.Windows.Forms.TabPage();
+            this.btn_InscricaoRouter = new System.Windows.Forms.Button();
+            this.dgView_Inscricoes = new System.Windows.Forms.DataGridView();
             this.dgView_EEpoca = new System.Windows.Forms.DataGridView();
             this.btn_DeleteEEpoca = new System.Windows.Forms.Button();
             this.btn_EditEEpoca = new System.Windows.Forms.Button();
@@ -50,6 +52,7 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_EEpocaLista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_EEpoca)).BeginInit();
             this.tab_EEpocaDetalhe.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +99,8 @@
             // 
             // tab_EEpocaLista
             // 
+            this.tab_EEpocaLista.Controls.Add(this.btn_InscricaoRouter);
+            this.tab_EEpocaLista.Controls.Add(this.dgView_Inscricoes);
             this.tab_EEpocaLista.Controls.Add(this.dgView_EEpoca);
             this.tab_EEpocaLista.Controls.Add(this.btn_DeleteEEpoca);
             this.tab_EEpocaLista.Controls.Add(this.btn_EditEEpoca);
@@ -111,13 +116,31 @@
             this.tab_EEpocaLista.Text = "Estado Lista";
             this.tab_EEpocaLista.UseVisualStyleBackColor = true;
             // 
+            // btn_InscricaoRouter
+            // 
+            this.btn_InscricaoRouter.Location = new System.Drawing.Point(725, 250);
+            this.btn_InscricaoRouter.Name = "btn_InscricaoRouter";
+            this.btn_InscricaoRouter.Size = new System.Drawing.Size(119, 38);
+            this.btn_InscricaoRouter.TabIndex = 8;
+            this.btn_InscricaoRouter.Text = "Inscricoes";
+            this.btn_InscricaoRouter.UseVisualStyleBackColor = true;
+            // 
+            // dgView_Inscricoes
+            // 
+            this.dgView_Inscricoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Inscricoes.Location = new System.Drawing.Point(3, 196);
+            this.dgView_Inscricoes.Name = "dgView_Inscricoes";
+            this.dgView_Inscricoes.RowTemplate.Height = 25;
+            this.dgView_Inscricoes.Size = new System.Drawing.Size(716, 168);
+            this.dgView_Inscricoes.TabIndex = 7;
+            // 
             // dgView_EEpoca
             // 
             this.dgView_EEpoca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_EEpoca.Location = new System.Drawing.Point(3, 38);
             this.dgView_EEpoca.Name = "dgView_EEpoca";
             this.dgView_EEpoca.RowTemplate.Height = 25;
-            this.dgView_EEpoca.Size = new System.Drawing.Size(716, 319);
+            this.dgView_EEpoca.Size = new System.Drawing.Size(716, 152);
             this.dgView_EEpoca.TabIndex = 6;
             // 
             // btn_DeleteEEpoca
@@ -252,6 +275,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_EEpocaLista.ResumeLayout(false);
             this.tab_EEpocaLista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_EEpoca)).EndInit();
             this.tab_EEpocaDetalhe.ResumeLayout(false);
             this.tab_EEpocaDetalhe.PerformLayout();
@@ -280,5 +304,7 @@
         private TextBox tb_IdEEpoca;
         private Label label4;
         private Label label3;
+        private Button btn_InscricaoRouter;
+        private DataGridView dgView_Inscricoes;
     }
 }
