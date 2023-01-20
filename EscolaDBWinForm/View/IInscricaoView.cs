@@ -32,6 +32,10 @@ namespace EscolaDBWinForm.View
 
         //Metodos 
         void SetInscricaoListBindingSource(BindingSource inscricao);
+        void SetUCListBindingSource(BindingSource uc);
+        void SetAnoListBindingSource(BindingSource ano);
+        void SetEpocaAListBindingSource(BindingSource epoca);
+        void SetEEpocaListBindingSource(BindingSource eepoca);
         void Show(); 
 
     }

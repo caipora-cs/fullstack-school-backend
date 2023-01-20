@@ -29,37 +29,39 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_InscricaoLista = new System.Windows.Forms.TabPage();
-            this.tab_InscricaoDetalhe = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_Search = new System.Windows.Forms.TextBox();
-            this.dgView_Inscricao = new System.Windows.Forms.DataGridView();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.btn_AddInscricao = new System.Windows.Forms.Button();
-            this.btn_EditInscricao = new System.Windows.Forms.Button();
             this.btn_DeleteInscricao = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tb_NumeroAlunoInscricao = new System.Windows.Forms.TextBox();
-            this.cb_UCInscricao = new System.Windows.Forms.ComboBox();
-            this.cb_AnoInscricao = new System.Windows.Forms.ComboBox();
-            this.cb_EpocaAInscricao = new System.Windows.Forms.ComboBox();
-            this.cb_EEpocaInscricao = new System.Windows.Forms.ComboBox();
-            this.tb_PresencaInscricao = new System.Windows.Forms.TextBox();
+            this.btn_EditInscricao = new System.Windows.Forms.Button();
+            this.btn_AddInscricao = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.dgView_Inscricao = new System.Windows.Forms.DataGridView();
+            this.tb_Search = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tab_InscricaoDetalhe = new System.Windows.Forms.TabPage();
             this.tb_NotaInscricao = new System.Windows.Forms.TextBox();
+            this.tb_PresencaInscricao = new System.Windows.Forms.TextBox();
+            this.cb_EEpocaInscricao = new System.Windows.Forms.ComboBox();
+            this.cb_EpocaAInscricao = new System.Windows.Forms.ComboBox();
+            this.cb_AnoInscricao = new System.Windows.Forms.ComboBox();
+            this.cb_UCInscricao = new System.Windows.Forms.ComboBox();
+            this.tb_NumeroAlunoInscricao = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_InscricaoLista.SuspendLayout();
-            this.tab_InscricaoDetalhe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricao)).BeginInit();
+            this.tab_InscricaoDetalhe.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +73,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 75);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Close.Location = new System.Drawing.Point(789, 24);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(38, 29);
+            this.btn_Close.TabIndex = 2;
+            this.btn_Close.Text = "X";
+            this.btn_Close.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -109,8 +121,71 @@
             this.tab_InscricaoLista.Text = "Inscricoes Lista";
             this.tab_InscricaoLista.UseVisualStyleBackColor = true;
             // 
+            // btn_DeleteInscricao
+            // 
+            this.btn_DeleteInscricao.Location = new System.Drawing.Point(735, 126);
+            this.btn_DeleteInscricao.Name = "btn_DeleteInscricao";
+            this.btn_DeleteInscricao.Size = new System.Drawing.Size(103, 41);
+            this.btn_DeleteInscricao.TabIndex = 6;
+            this.btn_DeleteInscricao.Text = "Deletar";
+            this.btn_DeleteInscricao.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditInscricao
+            // 
+            this.btn_EditInscricao.Location = new System.Drawing.Point(735, 83);
+            this.btn_EditInscricao.Name = "btn_EditInscricao";
+            this.btn_EditInscricao.Size = new System.Drawing.Size(104, 37);
+            this.btn_EditInscricao.TabIndex = 5;
+            this.btn_EditInscricao.Text = "Editar";
+            this.btn_EditInscricao.UseVisualStyleBackColor = true;
+            // 
+            // btn_AddInscricao
+            // 
+            this.btn_AddInscricao.Location = new System.Drawing.Point(735, 39);
+            this.btn_AddInscricao.Name = "btn_AddInscricao";
+            this.btn_AddInscricao.Size = new System.Drawing.Size(104, 38);
+            this.btn_AddInscricao.TabIndex = 4;
+            this.btn_AddInscricao.Text = "Adicionar";
+            this.btn_AddInscricao.UseVisualStyleBackColor = true;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(587, 10);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(142, 23);
+            this.btn_Search.TabIndex = 3;
+            this.btn_Search.Text = "Procurar";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            // 
+            // dgView_Inscricao
+            // 
+            this.dgView_Inscricao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Inscricao.Location = new System.Drawing.Point(6, 39);
+            this.dgView_Inscricao.Name = "dgView_Inscricao";
+            this.dgView_Inscricao.RowTemplate.Height = 25;
+            this.dgView_Inscricao.Size = new System.Drawing.Size(723, 333);
+            this.dgView_Inscricao.TabIndex = 2;
+            // 
+            // tb_Search
+            // 
+            this.tb_Search.Location = new System.Drawing.Point(114, 10);
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.Size = new System.Drawing.Size(467, 23);
+            this.tb_Search.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Procurar Inscricao:";
+            // 
             // tab_InscricaoDetalhe
             // 
+            this.tab_InscricaoDetalhe.Controls.Add(this.btn_Cancel);
+            this.tab_InscricaoDetalhe.Controls.Add(this.btn_Save);
             this.tab_InscricaoDetalhe.Controls.Add(this.tb_NotaInscricao);
             this.tab_InscricaoDetalhe.Controls.Add(this.tb_PresencaInscricao);
             this.tab_InscricaoDetalhe.Controls.Add(this.cb_EEpocaInscricao);
@@ -133,130 +208,58 @@
             this.tab_InscricaoDetalhe.Text = "Inscricoes Detalhe";
             this.tab_InscricaoDetalhe.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // tb_NotaInscricao
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Procurar Inscricao:";
+            this.tb_NotaInscricao.Location = new System.Drawing.Point(158, 315);
+            this.tb_NotaInscricao.Name = "tb_NotaInscricao";
+            this.tb_NotaInscricao.Size = new System.Drawing.Size(100, 23);
+            this.tb_NotaInscricao.TabIndex = 13;
             // 
-            // tb_Search
+            // tb_PresencaInscricao
             // 
-            this.tb_Search.Location = new System.Drawing.Point(114, 10);
-            this.tb_Search.Name = "tb_Search";
-            this.tb_Search.Size = new System.Drawing.Size(467, 23);
-            this.tb_Search.TabIndex = 1;
+            this.tb_PresencaInscricao.Location = new System.Drawing.Point(19, 315);
+            this.tb_PresencaInscricao.Name = "tb_PresencaInscricao";
+            this.tb_PresencaInscricao.Size = new System.Drawing.Size(100, 23);
+            this.tb_PresencaInscricao.TabIndex = 12;
             // 
-            // dgView_Inscricao
+            // cb_EEpocaInscricao
             // 
-            this.dgView_Inscricao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_Inscricao.Location = new System.Drawing.Point(6, 39);
-            this.dgView_Inscricao.Name = "dgView_Inscricao";
-            this.dgView_Inscricao.RowTemplate.Height = 25;
-            this.dgView_Inscricao.Size = new System.Drawing.Size(723, 333);
-            this.dgView_Inscricao.TabIndex = 2;
+            this.cb_EEpocaInscricao.FormattingEnabled = true;
+            this.cb_EEpocaInscricao.Location = new System.Drawing.Point(19, 261);
+            this.cb_EEpocaInscricao.Name = "cb_EEpocaInscricao";
+            this.cb_EEpocaInscricao.Size = new System.Drawing.Size(172, 23);
+            this.cb_EEpocaInscricao.TabIndex = 11;
             // 
-            // btn_Search
+            // cb_EpocaAInscricao
             // 
-            this.btn_Search.Location = new System.Drawing.Point(587, 10);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(142, 23);
-            this.btn_Search.TabIndex = 3;
-            this.btn_Search.Text = "Procurar";
-            this.btn_Search.UseVisualStyleBackColor = true;
+            this.cb_EpocaAInscricao.FormattingEnabled = true;
+            this.cb_EpocaAInscricao.Location = new System.Drawing.Point(19, 199);
+            this.cb_EpocaAInscricao.Name = "cb_EpocaAInscricao";
+            this.cb_EpocaAInscricao.Size = new System.Drawing.Size(172, 23);
+            this.cb_EpocaAInscricao.TabIndex = 10;
             // 
-            // btn_AddInscricao
+            // cb_AnoInscricao
             // 
-            this.btn_AddInscricao.Location = new System.Drawing.Point(735, 39);
-            this.btn_AddInscricao.Name = "btn_AddInscricao";
-            this.btn_AddInscricao.Size = new System.Drawing.Size(104, 38);
-            this.btn_AddInscricao.TabIndex = 4;
-            this.btn_AddInscricao.Text = "Adicionar";
-            this.btn_AddInscricao.UseVisualStyleBackColor = true;
+            this.cb_AnoInscricao.FormattingEnabled = true;
+            this.cb_AnoInscricao.Location = new System.Drawing.Point(22, 144);
+            this.cb_AnoInscricao.Name = "cb_AnoInscricao";
+            this.cb_AnoInscricao.Size = new System.Drawing.Size(227, 23);
+            this.cb_AnoInscricao.TabIndex = 9;
             // 
-            // btn_EditInscricao
+            // cb_UCInscricao
             // 
-            this.btn_EditInscricao.Location = new System.Drawing.Point(735, 83);
-            this.btn_EditInscricao.Name = "btn_EditInscricao";
-            this.btn_EditInscricao.Size = new System.Drawing.Size(104, 37);
-            this.btn_EditInscricao.TabIndex = 5;
-            this.btn_EditInscricao.Text = "Editar";
-            this.btn_EditInscricao.UseVisualStyleBackColor = true;
+            this.cb_UCInscricao.FormattingEnabled = true;
+            this.cb_UCInscricao.Location = new System.Drawing.Point(22, 93);
+            this.cb_UCInscricao.Name = "cb_UCInscricao";
+            this.cb_UCInscricao.Size = new System.Drawing.Size(227, 23);
+            this.cb_UCInscricao.TabIndex = 8;
             // 
-            // btn_DeleteInscricao
+            // tb_NumeroAlunoInscricao
             // 
-            this.btn_DeleteInscricao.Location = new System.Drawing.Point(735, 126);
-            this.btn_DeleteInscricao.Name = "btn_DeleteInscricao";
-            this.btn_DeleteInscricao.Size = new System.Drawing.Size(103, 41);
-            this.btn_DeleteInscricao.TabIndex = 6;
-            this.btn_DeleteInscricao.Text = "Deletar";
-            this.btn_DeleteInscricao.UseVisualStyleBackColor = true;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Close.Location = new System.Drawing.Point(789, 24);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(38, 29);
-            this.btn_Close.TabIndex = 2;
-            this.btn_Close.Text = "X";
-            this.btn_Close.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Numero do Aluno";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 15);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Unidade Curricular (id)";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 15);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Ano Letivo (id)";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 181);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 15);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Epoca Avaliacao(id)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 243);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Estado da Epoca(id)";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 297);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 15);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Presenca";
+            this.tb_NumeroAlunoInscricao.Location = new System.Drawing.Point(22, 41);
+            this.tb_NumeroAlunoInscricao.Name = "tb_NumeroAlunoInscricao";
+            this.tb_NumeroAlunoInscricao.Size = new System.Drawing.Size(100, 23);
+            this.tb_NumeroAlunoInscricao.TabIndex = 7;
             // 
             // label9
             // 
@@ -267,58 +270,77 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Nota";
             // 
-            // tb_NumeroAlunoInscricao
+            // label8
             // 
-            this.tb_NumeroAlunoInscricao.Location = new System.Drawing.Point(22, 41);
-            this.tb_NumeroAlunoInscricao.Name = "tb_NumeroAlunoInscricao";
-            this.tb_NumeroAlunoInscricao.Size = new System.Drawing.Size(100, 23);
-            this.tb_NumeroAlunoInscricao.TabIndex = 7;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 297);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 15);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Presenca";
             // 
-            // cb_UCInscricao
+            // label7
             // 
-            this.cb_UCInscricao.FormattingEnabled = true;
-            this.cb_UCInscricao.Location = new System.Drawing.Point(22, 93);
-            this.cb_UCInscricao.Name = "cb_UCInscricao";
-            this.cb_UCInscricao.Size = new System.Drawing.Size(227, 23);
-            this.cb_UCInscricao.TabIndex = 8;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 243);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Estado da Epoca(id)";
             // 
-            // cb_AnoInscricao
+            // label6
             // 
-            this.cb_AnoInscricao.FormattingEnabled = true;
-            this.cb_AnoInscricao.Location = new System.Drawing.Point(22, 144);
-            this.cb_AnoInscricao.Name = "cb_AnoInscricao";
-            this.cb_AnoInscricao.Size = new System.Drawing.Size(227, 23);
-            this.cb_AnoInscricao.TabIndex = 9;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 181);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 15);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Epoca Avaliacao(id)";
             // 
-            // cb_EpocaAInscricao
+            // label5
             // 
-            this.cb_EpocaAInscricao.FormattingEnabled = true;
-            this.cb_EpocaAInscricao.Location = new System.Drawing.Point(19, 199);
-            this.cb_EpocaAInscricao.Name = "cb_EpocaAInscricao";
-            this.cb_EpocaAInscricao.Size = new System.Drawing.Size(172, 23);
-            this.cb_EpocaAInscricao.TabIndex = 10;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 15);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Ano Letivo (id)";
             // 
-            // cb_EEpocaInscricao
+            // label4
             // 
-            this.cb_EEpocaInscricao.FormattingEnabled = true;
-            this.cb_EEpocaInscricao.Location = new System.Drawing.Point(19, 261);
-            this.cb_EEpocaInscricao.Name = "cb_EEpocaInscricao";
-            this.cb_EEpocaInscricao.Size = new System.Drawing.Size(172, 23);
-            this.cb_EEpocaInscricao.TabIndex = 11;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Unidade Curricular (id)";
             // 
-            // tb_PresencaInscricao
+            // label3
             // 
-            this.tb_PresencaInscricao.Location = new System.Drawing.Point(19, 315);
-            this.tb_PresencaInscricao.Name = "tb_PresencaInscricao";
-            this.tb_PresencaInscricao.Size = new System.Drawing.Size(100, 23);
-            this.tb_PresencaInscricao.TabIndex = 12;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Numero do Aluno";
             // 
-            // tb_NotaInscricao
+            // btn_Save
             // 
-            this.tb_NotaInscricao.Location = new System.Drawing.Point(158, 315);
-            this.tb_NotaInscricao.Name = "tb_NotaInscricao";
-            this.tb_NotaInscricao.Size = new System.Drawing.Size(100, 23);
-            this.tb_NotaInscricao.TabIndex = 13;
+            this.btn_Save.Location = new System.Drawing.Point(652, 302);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(75, 46);
+            this.btn_Save.TabIndex = 14;
+            this.btn_Save.Text = "Salvar";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(733, 302);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 46);
+            this.btn_Cancel.TabIndex = 15;
+            this.btn_Cancel.Text = "Cancelar";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
             // InscricaoView
             // 
@@ -334,9 +356,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_InscricaoLista.ResumeLayout(false);
             this.tab_InscricaoLista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricao)).EndInit();
             this.tab_InscricaoDetalhe.ResumeLayout(false);
             this.tab_InscricaoDetalhe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +392,7 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private Button btn_Cancel;
+        private Button btn_Save;
     }
 }
