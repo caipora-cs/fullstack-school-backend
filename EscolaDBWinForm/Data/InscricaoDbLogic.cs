@@ -23,7 +23,7 @@ namespace EscolaDBWinForm.Data
         }
 
         //Deleta uma inscricao baseado no numero do aluno, idunidadecurricular, idanoletivo e id epoca avaliacao
-        public void Delete(int idAluno, int idUC, int idAnoLetivo, int idEpoca)
+        public void Delete(int idAluno, int idUC, int idAnoLetivo, string idEpoca)
         {
             var inscricao = _context.Inscricaos.Find(idAluno, idUC, idAnoLetivo, idEpoca);
             _context.Inscricaos.Remove(inscricao);
@@ -48,6 +48,22 @@ namespace EscolaDBWinForm.Data
         public IEnumerable<Inscricao> GetByValue(string value)
         {
             return _context.Inscricaos.Where(i => i.NumeroAluno.ToString().Contains(value) || i.IdUnidadeCurricular.ToString().Contains(value) || i.IdAnoLetivo.ToString().Contains(value) || i.IdEpocaAvaliacao.ToString().Contains(value)).ToList();
+        }
+
+        public IEnumerable<Inscricao> GetInscricaoByAlunoAndUCAndAno(int idAluno, int idUC, int idAnoLetivo)
+        {
+            return _context.Inscricaos.Where(i => i.NumeroAluno == idAluno && i.IdUnidadeCurricular == idUC && i.IdAnoLetivo == idAnoLetivo).ToList();
+        }
+
+        public IEnumerable<Inscricao> GetInscricaoByAlunoAndUCAndAnoAndEstadoEpoca(int idAluno, int idUC, int idAnoLetivo, int idEstadoEpoca)
+        {
+            return _context.Inscricaos.Where(i => i.NumeroAluno == idAluno && i.IdUnidadeCurricular == idUC && i.IdAnoLetivo == idAnoLetivo && i.IdEstadoEpoca == idEstadoEpoca).ToList();
+        }
+
+
+        public IEnumerable<Inscricao> GetInscricaoByAlunoAndUCAndAnoAndEstadoEpocaAndEpocaAvaliacao(int idAluno, int idUC, int idAnoLetivo, int idEstadoEpoca, string idEpocaAvaliacao)
+        {
+            return _context.Inscricaos.Where(i => i.NumeroAluno == idAluno && i.IdUnidadeCurricular == idUC && i.IdAnoLetivo == idAnoLetivo && i.IdEstadoEpoca == idEstadoEpoca && i.IdEpocaAvaliacao == idEpocaAvaliacao).ToList();
         }
     }
 }

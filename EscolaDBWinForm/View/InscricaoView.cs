@@ -194,6 +194,28 @@ namespace EscolaDBWinForm.View
             cb_EEpocaInscricao.ValueMember = "Id";
         }
 
+        //Metodos Auxiliares para Read Only
+        //So deixa o utilizador editar os campos Presenca e Nota
+        /*public void SetReadOnlyPresencaNota()
+        {
+            tb_NumeroAlunoInscricao.ReadOnly = true;
+            cb_UCInscricao.Enabled = false;
+            cb_AnoInscricao.Enabled = false;
+            cb_EpocaAInscricao.Enabled = false;
+            cb_EEpocaInscricao.Enabled = false;
+        }
+        //Nao deixa o utilizador editar nada
+        public void SetReadOnlyAll()
+        {
+            tb_NumeroAlunoInscricao.ReadOnly = true;
+            cb_UCInscricao.Enabled = false;
+            cb_AnoInscricao.Enabled = false;
+            cb_EpocaAInscricao.Enabled = false;
+            cb_EEpocaInscricao.Enabled = false;
+            tb_PresencaInscricao.ReadOnly = true;
+            tb_NotaInscricao.ReadOnly = true;
+        }*/
+
         //Singleton
         private static InscricaoView instance;
         public static InscricaoView GetInstance(Form parentContainer)
