@@ -14,6 +14,7 @@ namespace EscolaDBWinForm.Models
         void Delete(int id);
         IEnumerable<UnidadeCurricular> GetAll();
         IEnumerable<UnidadeCurricular> GetByValue(string value); //Search por valor
+        ICollection<Inscricao> GetInscricao(int id); //Busca todas as inscrições de uma UC para apresentar na gridview
 
 
     }

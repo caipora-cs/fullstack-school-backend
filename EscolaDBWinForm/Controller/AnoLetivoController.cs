@@ -73,7 +73,8 @@ namespace EscolaDBWinForm.Controller
 
             try
             {
-                if (model.Id == 0)
+                new ModelDataValidation().ValidateModelData(model);
+                if (_view.IsEdit)
                 {
                     _model.Edit(model);
                     _view.Message = "Ano Letivo atualizado com sucesso!";
@@ -112,19 +113,17 @@ namespace EscolaDBWinForm.Controller
             {
                 var ano = (AnoLetivo)anoBindingSource.Current;
                 _model.Delete(ano.Id);
-                _view.IsSuccessful = true;
                 _view.Message = "Ano eliminado com sucesso!";
+                _view.IsSuccessful = true;
+                LoadAnoList();
+                ClearView();
             }
             catch (Exception ex)
             {
                 _view.Message = "Erro ao eliminar Ano";
                 _view.IsSuccessful = false;
             }
-            finally
-            {
-                LoadAnoList();
-                ClearView();
-            }
+            
         }
 
         private void LoadSelectedtoEditAno(object? sender, EventArgs e)
@@ -133,6 +132,7 @@ namespace EscolaDBWinForm.Controller
             _view.IdAno = ano.Id;
             _view.AnoLetivoInicial = ano.AnoInicial;
             _view.AnoLetivoFinal = ano.AnoFinal;
+            _view.IsEdit = true;
         }
 
         private void AddNewAno(object? sender, EventArgs e)

@@ -13,7 +13,9 @@ namespace EscolaDBWinForm.Controller
         private IUCView _view;
         private IUnidadeCurricular _model;
         private BindingSource ucBindingSource;
+        private BindingSource inscricaoBindingSource;
         private IEnumerable<UnidadeCurricular> ucList;
+        private ICollection<Inscricao> inscricaoList;
 
 
         public UCController(IUCView view, IUnidadeCurricular model)
@@ -21,7 +23,9 @@ namespace EscolaDBWinForm.Controller
             _view = view;
             _model = model;
             ucBindingSource = new BindingSource();
+            inscricaoBindingSource = new BindingSource();
             ucList = new List<UnidadeCurricular>();
+            inscricaoList = new List<Inscricao>();
 
             //Eventos
             _view.SearchEvent += SearchUC;
@@ -30,12 +34,24 @@ namespace EscolaDBWinForm.Controller
             _view.DeleteEvent += DeleteUC;
             _view.SaveEvent += SaveUC;
             _view.CancelEvent += CancelAction;
+            _view.SelectEvent += SelectAction;
 
             //Liga BindingSourc
             _view.SetUCListBindingSource(ucBindingSource);
+            _view.SetInscricaoListBindingSource(inscricaoBindingSource);
 
             LoadUCList();
             _view.Show();
+        }
+
+        private void SelectAction(object? sender, EventArgs e)
+        {
+            var model = (UnidadeCurricular)ucBindingSource.Current;
+            if (model != null)
+            {
+                inscricaoList = _model.GetInscricao(model.Id);
+                inscricaoBindingSource.DataSource = inscricaoList;
+            }
         }
 
         private void LoadUCList()

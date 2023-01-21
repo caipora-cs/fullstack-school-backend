@@ -22,7 +22,7 @@ namespace EscolaDBWinForm.Data
             _context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete(short id)
         {
             var e_epoca = _context.EstadoEpocas.Find(id);
             _context.EstadoEpocas.Remove(e_epoca);

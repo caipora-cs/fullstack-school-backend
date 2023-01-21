@@ -38,7 +38,7 @@
             this.btn_AddUC = new System.Windows.Forms.Button();
             this.btn_Search = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgView_Alunos = new System.Windows.Forms.DataGridView();
+            this.dgView_Inscricoes = new System.Windows.Forms.DataGridView();
             this.dgView_UC = new System.Windows.Forms.DataGridView();
             this.tb_Search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,25 +64,28 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_UCLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Alunos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_UC)).BeginInit();
             this.tab_UCDetalhe.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 83);
+            this.panel1.Size = new System.Drawing.Size(823, 83);
             this.panel1.TabIndex = 0;
             // 
             // btn_Close
             // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Close.Location = new System.Drawing.Point(742, 27);
+            this.btn_Close.Location = new System.Drawing.Point(763, 27);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(34, 25);
             this.btn_Close.TabIndex = 1;
@@ -101,6 +104,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_UCLista);
             this.tabControl1.Controls.Add(this.tab_UCDetalhe);
             this.tabControl1.Location = new System.Drawing.Point(0, 90);
@@ -116,7 +122,7 @@
             this.tab_UCLista.Controls.Add(this.btn_AddUC);
             this.tab_UCLista.Controls.Add(this.btn_Search);
             this.tab_UCLista.Controls.Add(this.label3);
-            this.tab_UCLista.Controls.Add(this.dgView_Alunos);
+            this.tab_UCLista.Controls.Add(this.dgView_Inscricoes);
             this.tab_UCLista.Controls.Add(this.dgView_UC);
             this.tab_UCLista.Controls.Add(this.tb_Search);
             this.tab_UCLista.Controls.Add(this.label2);
@@ -130,6 +136,7 @@
             // 
             // btn_DeleteUC
             // 
+            this.btn_DeleteUC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_DeleteUC.Location = new System.Drawing.Point(706, 120);
             this.btn_DeleteUC.Name = "btn_DeleteUC";
             this.btn_DeleteUC.Size = new System.Drawing.Size(109, 38);
@@ -139,6 +146,7 @@
             // 
             // btn_EditUC
             // 
+            this.btn_EditUC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_EditUC.Location = new System.Drawing.Point(706, 79);
             this.btn_EditUC.Name = "btn_EditUC";
             this.btn_EditUC.Size = new System.Drawing.Size(109, 35);
@@ -148,6 +156,7 @@
             // 
             // btn_AddUC
             // 
+            this.btn_AddUC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddUC.Location = new System.Drawing.Point(706, 39);
             this.btn_AddUC.Name = "btn_AddUC";
             this.btn_AddUC.Size = new System.Drawing.Size(106, 34);
@@ -157,6 +166,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Search.Location = new System.Drawing.Point(625, 10);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(75, 23);
@@ -166,6 +176,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(407, 39);
             this.label3.Name = "label3";
@@ -173,17 +184,22 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Alunos da UC:";
             // 
-            // dgView_Alunos
+            // dgView_Inscricoes
             // 
-            this.dgView_Alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_Alunos.Location = new System.Drawing.Point(407, 57);
-            this.dgView_Alunos.Name = "dgView_Alunos";
-            this.dgView_Alunos.RowTemplate.Height = 25;
-            this.dgView_Alunos.Size = new System.Drawing.Size(293, 295);
-            this.dgView_Alunos.TabIndex = 3;
+            this.dgView_Inscricoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgView_Inscricoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Inscricoes.Location = new System.Drawing.Point(407, 57);
+            this.dgView_Inscricoes.Name = "dgView_Inscricoes";
+            this.dgView_Inscricoes.RowTemplate.Height = 25;
+            this.dgView_Inscricoes.Size = new System.Drawing.Size(293, 295);
+            this.dgView_Inscricoes.TabIndex = 3;
             // 
             // dgView_UC
             // 
+            this.dgView_UC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgView_UC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_UC.Location = new System.Drawing.Point(3, 39);
             this.dgView_UC.Name = "dgView_UC";
@@ -193,6 +209,8 @@
             // 
             // tb_Search
             // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_Search.Location = new System.Drawing.Point(86, 10);
             this.tb_Search.Name = "tb_Search";
             this.tb_Search.Size = new System.Drawing.Size(528, 23);
@@ -237,6 +255,7 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Cancel.Location = new System.Drawing.Point(706, 286);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 45);
@@ -246,6 +265,7 @@
             // 
             // btn_Save
             // 
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.Location = new System.Drawing.Point(619, 286);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 45);
@@ -395,7 +415,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_UCLista.ResumeLayout(false);
             this.tab_UCLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Alunos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Inscricoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_UC)).EndInit();
             this.tab_UCDetalhe.ResumeLayout(false);
             this.tab_UCDetalhe.PerformLayout();
@@ -419,7 +439,7 @@
         private Button btn_AddUC;
         private Button btn_Search;
         private Label label3;
-        private DataGridView dgView_Alunos;
+        private DataGridView dgView_Inscricoes;
         private Label label11;
         private Label label10;
         private Label label9;

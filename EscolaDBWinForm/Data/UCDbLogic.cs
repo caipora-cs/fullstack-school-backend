@@ -51,5 +51,10 @@ namespace EscolaDBWinForm.Data
         {
             return _context.UnidadeCurriculars.Where(c => c.Nome.Contains(value) || c.Sigla.Contains(value)).ToList();
         }
+
+        public ICollection<Inscricao> GetInscricao(int id)
+        {
+            return _context.Inscricaos.Where(i => i.IdUnidadeCurricular == id).ToList();
+        }
     }
 }

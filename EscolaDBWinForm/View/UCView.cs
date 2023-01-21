@@ -95,6 +95,10 @@ namespace EscolaDBWinForm.View
 
             };
 
+            dgView_UC.SelectionChanged += delegate
+            {
+                SelectEvent?.Invoke(this, EventArgs.Empty);
+            };
 
         }
 
@@ -147,10 +151,9 @@ namespace EscolaDBWinForm.View
             set { tb_SemestreUC.Text = value; }
         }
 
-        public ICollection<Inscricao> AlunosUC
+        public ICollection<Inscricao> InscricaosUC
         {
-            get { return (ICollection<Inscricao>)dgView_Alunos.DataSource; }
-            set { dgView_Alunos.DataSource = value; }
+            get { return (ICollection<Inscricao>)dgView_Inscricoes.DataSource; }
         }
 
         //State
@@ -182,11 +185,17 @@ namespace EscolaDBWinForm.View
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler SelectEvent;
 
         //Metodos
         public void SetUCListBindingSource(BindingSource ucList)
         {
             dgView_UC.DataSource = ucList;
+        }
+
+        public void SetInscricaoListBindingSource(BindingSource inscricaoList)
+        {
+            dgView_Inscricoes.DataSource = inscricaoList;
         }
 
         //Singleton

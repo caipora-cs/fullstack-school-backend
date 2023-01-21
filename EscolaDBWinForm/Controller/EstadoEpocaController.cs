@@ -72,6 +72,7 @@ namespace EscolaDBWinForm.Controller
 
             try
             {
+                new ModelDataValidation().ValidateModelData(model);
                 if (_view.IsEdit)
                 {
                     _model.Edit(model);
@@ -100,10 +101,8 @@ namespace EscolaDBWinForm.Controller
 
         private void ClearView()
         {
-            var modelEEpoca = _model.GetAll().LastOrDefault()?.Id + 1 ?? 1;
-            _view.IdEEpoca = (short)modelEEpoca;
+            _view.IdEEpoca = 0;
             _view.DescricaoEEpoca = "";
-            _view.IsEdit = false;
         }
 
         private void DeleteEEpoca(object? sender, EventArgs e)

@@ -41,6 +41,8 @@
             this.tb_Search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tab_InscricaoDetalhe = new System.Windows.Forms.TabPage();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.tb_NotaInscricao = new System.Windows.Forms.TextBox();
             this.tb_PresencaInscricao = new System.Windows.Forms.TextBox();
             this.cb_EEpocaInscricao = new System.Windows.Forms.ComboBox();
@@ -55,8 +57,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.btn_Cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_InscricaoLista.SuspendLayout();
@@ -66,6 +66,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.label1);
@@ -76,6 +78,7 @@
             // 
             // btn_Close
             // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Close.Location = new System.Drawing.Point(789, 24);
             this.btn_Close.Name = "btn_Close";
@@ -96,6 +99,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_InscricaoLista);
             this.tabControl1.Controls.Add(this.tab_InscricaoDetalhe);
             this.tabControl1.Location = new System.Drawing.Point(0, 82);
@@ -123,6 +129,7 @@
             // 
             // btn_DeleteInscricao
             // 
+            this.btn_DeleteInscricao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_DeleteInscricao.Location = new System.Drawing.Point(735, 126);
             this.btn_DeleteInscricao.Name = "btn_DeleteInscricao";
             this.btn_DeleteInscricao.Size = new System.Drawing.Size(103, 41);
@@ -132,6 +139,7 @@
             // 
             // btn_EditInscricao
             // 
+            this.btn_EditInscricao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_EditInscricao.Location = new System.Drawing.Point(735, 83);
             this.btn_EditInscricao.Name = "btn_EditInscricao";
             this.btn_EditInscricao.Size = new System.Drawing.Size(104, 37);
@@ -141,6 +149,7 @@
             // 
             // btn_AddInscricao
             // 
+            this.btn_AddInscricao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddInscricao.Location = new System.Drawing.Point(735, 39);
             this.btn_AddInscricao.Name = "btn_AddInscricao";
             this.btn_AddInscricao.Size = new System.Drawing.Size(104, 38);
@@ -150,6 +159,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Search.Location = new System.Drawing.Point(587, 10);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(142, 23);
@@ -159,6 +169,9 @@
             // 
             // dgView_Inscricao
             // 
+            this.dgView_Inscricao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgView_Inscricao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_Inscricao.Location = new System.Drawing.Point(6, 39);
             this.dgView_Inscricao.Name = "dgView_Inscricao";
@@ -168,6 +181,8 @@
             // 
             // tb_Search
             // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_Search.Location = new System.Drawing.Point(114, 10);
             this.tb_Search.Name = "tb_Search";
             this.tb_Search.Size = new System.Drawing.Size(467, 23);
@@ -207,6 +222,26 @@
             this.tab_InscricaoDetalhe.TabIndex = 1;
             this.tab_InscricaoDetalhe.Text = "Inscricoes Detalhe";
             this.tab_InscricaoDetalhe.UseVisualStyleBackColor = true;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.Location = new System.Drawing.Point(733, 302);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 46);
+            this.btn_Cancel.TabIndex = 15;
+            this.btn_Cancel.Text = "Cancelar";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Save.Location = new System.Drawing.Point(652, 302);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(75, 46);
+            this.btn_Save.TabIndex = 14;
+            this.btn_Save.Text = "Salvar";
+            this.btn_Save.UseVisualStyleBackColor = true;
             // 
             // tb_NotaInscricao
             // 
@@ -323,24 +358,6 @@
             this.label3.Size = new System.Drawing.Size(103, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Numero do Aluno";
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(652, 302);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 46);
-            this.btn_Save.TabIndex = 14;
-            this.btn_Save.Text = "Salvar";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(733, 302);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(75, 46);
-            this.btn_Cancel.TabIndex = 15;
-            this.btn_Cancel.Text = "Cancelar";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
             // InscricaoView
             // 

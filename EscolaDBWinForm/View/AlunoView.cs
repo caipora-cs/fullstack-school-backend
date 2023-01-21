@@ -106,14 +106,23 @@ namespace EscolaDBWinForm.View
         }
 
         //Propriedades
-        public string NumeroAluno { get => tb_NumeroAluno.Text; set => tb_NumeroAluno.Text = value; } //Sem set porque o valor é gerado automaticamente,TODO:Migrar propriedade autoincrement no Numero do Aluno Field
+        public int NumeroAluno  //Sem set porque o valor é gerado automaticamente,TODO:Migrar propriedade autoincrement no Numero do Aluno Field
+        {
+            get { return Convert.ToInt32(tb_NumeroAluno.Text); }
+            set { tb_NumeroAluno.Text = value.ToString(); }
+        }
+
         public string NomeAluno { get => tb_NomeAluno.Text; set => tb_NomeAluno.Text = value; }
         public string ApelidoAluno { get => tb_Apelido.Text; set => tb_Apelido.Text = value; }
         public DateTime IdadeAluno { get => dTimeP_DataNascimento.Value; set => dTimeP_DataNascimento.Value = value; }
         public string MoradaAluno { get => tb_Morada.Text; set => tb_Morada.Text = value; }
         public string EmailAluno { get => tb_Email.Text ; set => tb_Email.Text = value; }
         public string TelefoneAluno { get => tb_Telefone.Text; set => tb_Telefone.Text = value; }
-        public string CursoAluno { get => tb_Curso.Text; set => tb_Curso.Text = value; }
+        public int CursoAluno
+        {
+            get { return Convert.ToInt32(tb_Curso.Text); }
+            set { tb_Curso.Text = value.ToString(); }
+        }
         public DateTime AnoCursoAluno { get => dTimeP_AnoCurso.Value; set => dTimeP_AnoCurso.Value = value; }
         public string SearchValue { get =>  tB_Search.Text; set => tB_Search.Text = value; }
         public bool IsEdit { get => isEdit; set => isEdit = value; }

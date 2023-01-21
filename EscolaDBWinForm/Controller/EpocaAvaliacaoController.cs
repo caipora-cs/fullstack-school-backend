@@ -54,6 +54,7 @@ namespace EscolaDBWinForm.Controller
 
             try
             {
+                new ModelDataValidation().ValidateModelData(model);
                 if (_view.IsEdit)
                 {
                     _model.Edit(model);
@@ -65,8 +66,8 @@ namespace EscolaDBWinForm.Controller
                     _view.Message = "Epoca de Avaliacao adicionada com sucesso!";
                 }
 
-                LoadEpocaAList();
                 _view.IsSuccessful = true;
+                LoadEpocaAList();
                 _view.Message = "Epoca de Avaliacao guardada com sucesso!";
             }
             catch (Exception ex)
@@ -83,9 +84,8 @@ namespace EscolaDBWinForm.Controller
         private void ClearView()
         {
             //get the last entered Id(string) convert to int and add 1 and convert back to string
-            _view.IdEpocaA = (epocaaList.Max(x => x.Id) + 1).ToString();
+            _view.IdEpocaA = "";
             _view.DescricaoEpocaA = string.Empty;
-            _view.IsEdit = false;
         }
 
         private void DeleteEpocaA(object? sender, EventArgs e)
@@ -94,8 +94,8 @@ namespace EscolaDBWinForm.Controller
             {
                 var epoca_a = (EpocaAvaliacao)epocaaBindingSource.Current;
                 _model.Delete(epoca_a.Id);
-                _view.IsSuccessful = true;
                 _view.Message = "Epoca de Avaliacao eliminada com sucesso!";
+                _view.IsSuccessful = true;
                 LoadEpocaAList();
             }
             catch (Exception ex)

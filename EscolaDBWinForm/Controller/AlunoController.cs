@@ -103,7 +103,7 @@ namespace EscolaDBWinForm.Controller
         {
             //Apanha o Numero de Aluno do ultimo aluno adicionado e incrementa 1
             var numeroAluno = _model.GetAll().LastOrDefault()?.Numero + 1 ?? 1;
-            _view.NumeroAluno = Convert.ToString(numeroAluno);
+            _view.NumeroAluno =numeroAluno;
             //Defaults
             _view.NomeAluno = "";
             _view.ApelidoAluno = "";
@@ -111,7 +111,7 @@ namespace EscolaDBWinForm.Controller
             _view.MoradaAluno = "";
             _view.EmailAluno = "";
             _view.TelefoneAluno = "";
-            _view.CursoAluno = "";
+            _view.CursoAluno = 0;
         }
 
         private void DeleteSelectedAluno(object? sender, EventArgs e)
@@ -140,14 +140,14 @@ namespace EscolaDBWinForm.Controller
             //Seleciona a linha do DataGridView e o objeto de data por baixo
             var aluno = (Aluno)alunosBindingSource.Current;
             //Apos selecionado, corresponde a data as textboxes da view
-            _view.NumeroAluno = Convert.ToString(aluno.Numero);
+            _view.NumeroAluno = aluno.Numero;
             _view.NomeAluno = aluno.NomeProprio;
             _view.ApelidoAluno = aluno.Apelido;
             _view.IdadeAluno = aluno.DataNascimento;
             _view.MoradaAluno = aluno.Morada;
             _view.EmailAluno = aluno.Email;
             _view.TelefoneAluno = aluno.Telefone;
-            _view.CursoAluno = aluno.ReferenciaCurso.ToString();
+            _view.CursoAluno = aluno.ReferenciaCurso;
             //_view.AnoCursoAluno = aluno.AnoCurso; <== Buscar data da ultima Inscricao Type:Datetime
             //Adicionar Foto e PictureBox
             //IsEdit diz se algo foi mudado ou nao para que o SaveEvent saiba se e para adicionar ou editar

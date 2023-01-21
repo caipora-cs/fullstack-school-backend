@@ -24,7 +24,7 @@ namespace EscolaDBWinForm.View
         //Curso CursoUC { get; set; }
 
         //ICollection dos Alunos da UC (Inscricoes)
-        ICollection<Inscricao> AlunosUC { get;}
+        ICollection<Inscricao> InscricaosUC { get;}
 
 
         //State
@@ -40,9 +40,11 @@ namespace EscolaDBWinForm.View
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler SelectEvent;
 
         //Metodos 
         void SetUCListBindingSource(BindingSource ucList);
+        void SetInscricaoListBindingSource(BindingSource inscricaoList);
         void Show(); 
     }
 }

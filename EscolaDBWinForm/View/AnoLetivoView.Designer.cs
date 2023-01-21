@@ -61,6 +61,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightPink;
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.label1);
@@ -71,6 +73,7 @@
             // 
             // btn_Close
             // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Close.Location = new System.Drawing.Point(737, 25);
             this.btn_Close.Name = "btn_Close";
@@ -91,6 +94,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_AnoLista);
             this.tabControl1.Controls.Add(this.tab_AnoDetalhe);
             this.tabControl1.Location = new System.Drawing.Point(1, 86);
@@ -120,6 +126,7 @@
             // 
             // btn_InscricaoRouter
             // 
+            this.btn_InscricaoRouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_InscricaoRouter.Location = new System.Drawing.Point(678, 241);
             this.btn_InscricaoRouter.Name = "btn_InscricaoRouter";
             this.btn_InscricaoRouter.Size = new System.Drawing.Size(111, 38);
@@ -129,6 +136,9 @@
             // 
             // dgView_Inscricoes
             // 
+            this.dgView_Inscricoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgView_Inscricoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_Inscricoes.Location = new System.Drawing.Point(6, 195);
             this.dgView_Inscricoes.Name = "dgView_Inscricoes";
@@ -138,6 +148,7 @@
             // 
             // btn_DeleteAno
             // 
+            this.btn_DeleteAno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_DeleteAno.Location = new System.Drawing.Point(678, 130);
             this.btn_DeleteAno.Name = "btn_DeleteAno";
             this.btn_DeleteAno.Size = new System.Drawing.Size(108, 41);
@@ -147,6 +158,7 @@
             // 
             // btn_EditAno
             // 
+            this.btn_EditAno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_EditAno.Location = new System.Drawing.Point(678, 84);
             this.btn_EditAno.Name = "btn_EditAno";
             this.btn_EditAno.Size = new System.Drawing.Size(108, 40);
@@ -156,6 +168,7 @@
             // 
             // btn_AddAno
             // 
+            this.btn_AddAno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddAno.Location = new System.Drawing.Point(678, 39);
             this.btn_AddAno.Name = "btn_AddAno";
             this.btn_AddAno.Size = new System.Drawing.Size(108, 39);
@@ -165,6 +178,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Search.Location = new System.Drawing.Point(564, 10);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(108, 23);
@@ -174,6 +188,8 @@
             // 
             // dgView_Ano
             // 
+            this.dgView_Ano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgView_Ano.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_Ano.Location = new System.Drawing.Point(6, 39);
             this.dgView_Ano.Name = "dgView_Ano";
@@ -183,6 +199,8 @@
             // 
             // tb_Search
             // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_Search.Location = new System.Drawing.Point(128, 10);
             this.tb_Search.Name = "tb_Search";
             this.tb_Search.Size = new System.Drawing.Size(430, 23);
@@ -238,6 +256,7 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Cancel.Location = new System.Drawing.Point(684, 275);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 39);
@@ -247,6 +266,7 @@
             // 
             // btn_Save
             // 
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.Location = new System.Drawing.Point(603, 275);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 39);

@@ -22,7 +22,7 @@ namespace EscolaDBWinForm.Data
             _context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete(short id)
         {
             var ano = _context.AnoLetivos.Find(id);
             _context.AnoLetivos.Remove(ano);

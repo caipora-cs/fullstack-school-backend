@@ -73,7 +73,7 @@ namespace EscolaDBWinForm.View
 
             btn_DeleteEpocaA.Click += delegate
             {
-                var answer = MessageBox.Show("Tem a certeza que deseja deletar a Epoca selecionado?","Atencao",
+                var answer = MessageBox.Show("Tem a certeza que deseja deletar a Epoca selecionado?", "Atencao",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (answer == DialogResult.Yes)
                 {
@@ -99,7 +99,7 @@ namespace EscolaDBWinForm.View
             set { tb_DescricaoEpocaA.Text = value; }
         }
 
-                //State
+        //State
 
         public string SearchValue
         {
@@ -151,7 +151,7 @@ namespace EscolaDBWinForm.View
                 instance.Dock = DockStyle.Fill;
             }
             else
-            {   
+            {
                 if (instance.WindowState == FormWindowState.Minimized)
                 {
                     instance.WindowState = FormWindowState.Normal;
