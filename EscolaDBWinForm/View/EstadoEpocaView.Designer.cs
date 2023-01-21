@@ -59,6 +59,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.label1);
@@ -69,6 +71,7 @@
             // 
             // btn_Close
             // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Close.Location = new System.Drawing.Point(801, 25);
             this.btn_Close.Name = "btn_Close";
@@ -89,6 +92,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_EEpocaLista);
             this.tabControl1.Controls.Add(this.tab_EEpocaDetalhe);
             this.tabControl1.Location = new System.Drawing.Point(1, 81);
@@ -118,6 +124,7 @@
             // 
             // btn_InscricaoRouter
             // 
+            this.btn_InscricaoRouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_InscricaoRouter.Location = new System.Drawing.Point(725, 250);
             this.btn_InscricaoRouter.Name = "btn_InscricaoRouter";
             this.btn_InscricaoRouter.Size = new System.Drawing.Size(119, 38);
@@ -127,6 +134,9 @@
             // 
             // dgView_Inscricoes
             // 
+            this.dgView_Inscricoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgView_Inscricoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_Inscricoes.Location = new System.Drawing.Point(3, 196);
             this.dgView_Inscricoes.Name = "dgView_Inscricoes";
@@ -136,6 +146,8 @@
             // 
             // dgView_EEpoca
             // 
+            this.dgView_EEpoca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgView_EEpoca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_EEpoca.Location = new System.Drawing.Point(3, 38);
             this.dgView_EEpoca.Name = "dgView_EEpoca";
@@ -145,6 +157,7 @@
             // 
             // btn_DeleteEEpoca
             // 
+            this.btn_DeleteEEpoca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_DeleteEEpoca.Location = new System.Drawing.Point(725, 129);
             this.btn_DeleteEEpoca.Name = "btn_DeleteEEpoca";
             this.btn_DeleteEEpoca.Size = new System.Drawing.Size(119, 42);
@@ -154,6 +167,7 @@
             // 
             // btn_EditEEpoca
             // 
+            this.btn_EditEEpoca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_EditEEpoca.Location = new System.Drawing.Point(725, 84);
             this.btn_EditEEpoca.Name = "btn_EditEEpoca";
             this.btn_EditEEpoca.Size = new System.Drawing.Size(119, 39);
@@ -163,6 +177,7 @@
             // 
             // btn_AddEEpoca
             // 
+            this.btn_AddEEpoca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddEEpoca.Location = new System.Drawing.Point(725, 38);
             this.btn_AddEEpoca.Name = "btn_AddEEpoca";
             this.btn_AddEEpoca.Size = new System.Drawing.Size(119, 40);
@@ -172,6 +187,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Search.Location = new System.Drawing.Point(563, 9);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(156, 23);
@@ -181,6 +197,8 @@
             // 
             // tb_Search
             // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_Search.Location = new System.Drawing.Point(162, 9);
             this.tb_Search.Name = "tb_Search";
             this.tb_Search.Size = new System.Drawing.Size(395, 23);
@@ -213,6 +231,7 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Cancel.Location = new System.Drawing.Point(729, 285);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(87, 48);
@@ -222,6 +241,7 @@
             // 
             // btn_Save
             // 
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.Location = new System.Drawing.Point(632, 285);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(91, 48);

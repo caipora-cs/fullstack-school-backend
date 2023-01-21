@@ -29,48 +29,61 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_CursoLista = new System.Windows.Forms.TabPage();
-            this.tab_CursoDetalhe = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_Search = new System.Windows.Forms.TextBox();
-            this.dgView_CursosLista = new System.Windows.Forms.DataGridView();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.btn_AddCurso = new System.Windows.Forms.Button();
-            this.btn_EditCurso = new System.Windows.Forms.Button();
-            this.btn_DeleteCurso = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgView_UC = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tb_Referencia = new System.Windows.Forms.TextBox();
-            this.tb_NomeCurso = new System.Windows.Forms.TextBox();
-            this.tb_SiglaCurso = new System.Windows.Forms.TextBox();
-            this.dTimeP_DataInicioCurso = new System.Windows.Forms.DateTimePicker();
-            this.btn_Save = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_DeleteCurso = new System.Windows.Forms.Button();
+            this.btn_EditCurso = new System.Windows.Forms.Button();
+            this.btn_AddCurso = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.dgView_CursosLista = new System.Windows.Forms.DataGridView();
+            this.tb_Search = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tab_CursoDetalhe = new System.Windows.Forms.TabPage();
             this.btn_Cancel = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.dTimeP_DataInicioCurso = new System.Windows.Forms.DateTimePicker();
+            this.tb_SiglaCurso = new System.Windows.Forms.TextBox();
+            this.tb_NomeCurso = new System.Windows.Forms.TextBox();
+            this.tb_Referencia = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_CursoLista.SuspendLayout();
-            this.tab_CursoDetalhe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_CursosLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_UC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_CursosLista)).BeginInit();
+            this.tab_CursoDetalhe.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 70);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Close.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Close.Location = new System.Drawing.Point(763, 21);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(33, 27);
+            this.btn_Close.TabIndex = 1;
+            this.btn_Close.Text = "X";
+            this.btn_Close.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -84,6 +97,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_CursoLista);
             this.tabControl1.Controls.Add(this.tab_CursoDetalhe);
             this.tabControl1.Location = new System.Drawing.Point(0, 76);
@@ -111,6 +127,97 @@
             this.tab_CursoLista.Text = "Cursos Lista";
             this.tab_CursoLista.UseVisualStyleBackColor = true;
             // 
+            // dgView_UC
+            // 
+            this.dgView_UC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgView_UC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_UC.Location = new System.Drawing.Point(350, 56);
+            this.dgView_UC.Name = "dgView_UC";
+            this.dgView_UC.RowTemplate.Height = 25;
+            this.dgView_UC.Size = new System.Drawing.Size(315, 303);
+            this.dgView_UC.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(350, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "UCs do Curso:";
+            // 
+            // btn_DeleteCurso
+            // 
+            this.btn_DeleteCurso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DeleteCurso.Location = new System.Drawing.Point(671, 132);
+            this.btn_DeleteCurso.Name = "btn_DeleteCurso";
+            this.btn_DeleteCurso.Size = new System.Drawing.Size(136, 44);
+            this.btn_DeleteCurso.TabIndex = 6;
+            this.btn_DeleteCurso.Text = "Deletar";
+            this.btn_DeleteCurso.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditCurso
+            // 
+            this.btn_EditCurso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_EditCurso.Location = new System.Drawing.Point(671, 84);
+            this.btn_EditCurso.Name = "btn_EditCurso";
+            this.btn_EditCurso.Size = new System.Drawing.Size(136, 42);
+            this.btn_EditCurso.TabIndex = 5;
+            this.btn_EditCurso.Text = "Editar";
+            this.btn_EditCurso.UseVisualStyleBackColor = true;
+            // 
+            // btn_AddCurso
+            // 
+            this.btn_AddCurso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AddCurso.Location = new System.Drawing.Point(671, 38);
+            this.btn_AddCurso.Name = "btn_AddCurso";
+            this.btn_AddCurso.Size = new System.Drawing.Size(136, 40);
+            this.btn_AddCurso.TabIndex = 4;
+            this.btn_AddCurso.Text = "Adicionar";
+            this.btn_AddCurso.UseVisualStyleBackColor = true;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search.Location = new System.Drawing.Point(546, 9);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(119, 23);
+            this.btn_Search.TabIndex = 3;
+            this.btn_Search.Text = "Procurar";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            // 
+            // dgView_CursosLista
+            // 
+            this.dgView_CursosLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgView_CursosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_CursosLista.Location = new System.Drawing.Point(8, 38);
+            this.dgView_CursosLista.Name = "dgView_CursosLista";
+            this.dgView_CursosLista.RowTemplate.Height = 25;
+            this.dgView_CursosLista.Size = new System.Drawing.Size(336, 321);
+            this.dgView_CursosLista.TabIndex = 2;
+            // 
+            // tb_Search
+            // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_Search.Location = new System.Drawing.Point(103, 9);
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.Size = new System.Drawing.Size(427, 23);
+            this.tb_Search.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Procurar Curso:";
+            // 
             // tab_CursoDetalhe
             // 
             this.tab_CursoDetalhe.Controls.Add(this.btn_Cancel);
@@ -131,111 +238,53 @@
             this.tab_CursoDetalhe.Text = "Curso Detalhe";
             this.tab_CursoDetalhe.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btn_Cancel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Procurar Curso:";
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.Location = new System.Drawing.Point(665, 294);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(83, 46);
+            this.btn_Cancel.TabIndex = 9;
+            this.btn_Cancel.Text = "Cancelar";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
-            // tb_Search
+            // btn_Save
             // 
-            this.tb_Search.Location = new System.Drawing.Point(103, 9);
-            this.tb_Search.Name = "tb_Search";
-            this.tb_Search.Size = new System.Drawing.Size(427, 23);
-            this.tb_Search.TabIndex = 1;
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Save.Location = new System.Drawing.Point(576, 294);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(83, 46);
+            this.btn_Save.TabIndex = 8;
+            this.btn_Save.Text = "Salvar";
+            this.btn_Save.UseVisualStyleBackColor = true;
             // 
-            // dgView_CursosLista
+            // dTimeP_DataInicioCurso
             // 
-            this.dgView_CursosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_CursosLista.Location = new System.Drawing.Point(8, 38);
-            this.dgView_CursosLista.Name = "dgView_CursosLista";
-            this.dgView_CursosLista.RowTemplate.Height = 25;
-            this.dgView_CursosLista.Size = new System.Drawing.Size(336, 321);
-            this.dgView_CursosLista.TabIndex = 2;
+            this.dTimeP_DataInicioCurso.Location = new System.Drawing.Point(50, 223);
+            this.dTimeP_DataInicioCurso.Name = "dTimeP_DataInicioCurso";
+            this.dTimeP_DataInicioCurso.Size = new System.Drawing.Size(200, 23);
+            this.dTimeP_DataInicioCurso.TabIndex = 7;
             // 
-            // btn_Search
+            // tb_SiglaCurso
             // 
-            this.btn_Search.Location = new System.Drawing.Point(546, 9);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(119, 23);
-            this.btn_Search.TabIndex = 3;
-            this.btn_Search.Text = "Procurar";
-            this.btn_Search.UseVisualStyleBackColor = true;
+            this.tb_SiglaCurso.Location = new System.Drawing.Point(278, 134);
+            this.tb_SiglaCurso.Name = "tb_SiglaCurso";
+            this.tb_SiglaCurso.Size = new System.Drawing.Size(75, 23);
+            this.tb_SiglaCurso.TabIndex = 6;
             // 
-            // btn_AddCurso
+            // tb_NomeCurso
             // 
-            this.btn_AddCurso.Location = new System.Drawing.Point(671, 38);
-            this.btn_AddCurso.Name = "btn_AddCurso";
-            this.btn_AddCurso.Size = new System.Drawing.Size(136, 40);
-            this.btn_AddCurso.TabIndex = 4;
-            this.btn_AddCurso.Text = "Adicionar";
-            this.btn_AddCurso.UseVisualStyleBackColor = true;
+            this.tb_NomeCurso.Location = new System.Drawing.Point(50, 134);
+            this.tb_NomeCurso.Name = "tb_NomeCurso";
+            this.tb_NomeCurso.Size = new System.Drawing.Size(200, 23);
+            this.tb_NomeCurso.TabIndex = 5;
             // 
-            // btn_EditCurso
+            // tb_Referencia
             // 
-            this.btn_EditCurso.Location = new System.Drawing.Point(671, 84);
-            this.btn_EditCurso.Name = "btn_EditCurso";
-            this.btn_EditCurso.Size = new System.Drawing.Size(136, 42);
-            this.btn_EditCurso.TabIndex = 5;
-            this.btn_EditCurso.Text = "Editar";
-            this.btn_EditCurso.UseVisualStyleBackColor = true;
-            // 
-            // btn_DeleteCurso
-            // 
-            this.btn_DeleteCurso.Location = new System.Drawing.Point(671, 132);
-            this.btn_DeleteCurso.Name = "btn_DeleteCurso";
-            this.btn_DeleteCurso.Size = new System.Drawing.Size(136, 44);
-            this.btn_DeleteCurso.TabIndex = 6;
-            this.btn_DeleteCurso.Text = "Deletar";
-            this.btn_DeleteCurso.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(350, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "UCs do Curso:";
-            // 
-            // dgView_UC
-            // 
-            this.dgView_UC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_UC.Location = new System.Drawing.Point(350, 56);
-            this.dgView_UC.Name = "dgView_UC";
-            this.dgView_UC.RowTemplate.Height = 25;
-            this.dgView_UC.Size = new System.Drawing.Size(315, 303);
-            this.dgView_UC.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Referencia";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nome do Curso:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(278, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Sigla";
+            this.tb_Referencia.Location = new System.Drawing.Point(50, 47);
+            this.tb_Referencia.Name = "tb_Referencia";
+            this.tb_Referencia.Size = new System.Drawing.Size(100, 23);
+            this.tb_Referencia.TabIndex = 4;
             // 
             // label7
             // 
@@ -246,62 +295,32 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Data de Inicio";
             // 
-            // tb_Referencia
+            // label6
             // 
-            this.tb_Referencia.Location = new System.Drawing.Point(50, 47);
-            this.tb_Referencia.Name = "tb_Referencia";
-            this.tb_Referencia.Size = new System.Drawing.Size(100, 23);
-            this.tb_Referencia.TabIndex = 4;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(278, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Sigla";
             // 
-            // tb_NomeCurso
+            // label5
             // 
-            this.tb_NomeCurso.Location = new System.Drawing.Point(50, 134);
-            this.tb_NomeCurso.Name = "tb_NomeCurso";
-            this.tb_NomeCurso.Size = new System.Drawing.Size(200, 23);
-            this.tb_NomeCurso.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(50, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nome do Curso:";
             // 
-            // tb_SiglaCurso
+            // label4
             // 
-            this.tb_SiglaCurso.Location = new System.Drawing.Point(278, 134);
-            this.tb_SiglaCurso.Name = "tb_SiglaCurso";
-            this.tb_SiglaCurso.Size = new System.Drawing.Size(75, 23);
-            this.tb_SiglaCurso.TabIndex = 6;
-            // 
-            // dTimeP_DataInicioCurso
-            // 
-            this.dTimeP_DataInicioCurso.Location = new System.Drawing.Point(50, 223);
-            this.dTimeP_DataInicioCurso.Name = "dTimeP_DataInicioCurso";
-            this.dTimeP_DataInicioCurso.Size = new System.Drawing.Size(200, 23);
-            this.dTimeP_DataInicioCurso.TabIndex = 7;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(576, 294);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(83, 46);
-            this.btn_Save.TabIndex = 8;
-            this.btn_Save.Text = "Salvar";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(665, 294);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(83, 46);
-            this.btn_Cancel.TabIndex = 9;
-            this.btn_Cancel.Text = "Cancelar";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Close.Location = new System.Drawing.Point(763, 21);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(33, 27);
-            this.btn_Close.TabIndex = 1;
-            this.btn_Close.Text = "X";
-            this.btn_Close.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Referencia";
             // 
             // CursoView
             // 
@@ -317,10 +336,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_CursoLista.ResumeLayout(false);
             this.tab_CursoLista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_UC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_CursosLista)).EndInit();
             this.tab_CursoDetalhe.ResumeLayout(false);
             this.tab_CursoDetalhe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_CursosLista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_UC)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -20,6 +20,44 @@ namespace EscolaDBWinForm.Controller
             this.mainView.ShowAlunosView += ShowAlunoView;
             this.mainView.ShowCursosView += ShowCursoView;
             this.mainView.ShowUnidadeCurricularView += ShowUnidadeCurricularView;
+            this.mainView.ShowDocentesView += ShowDocenteView;
+            this.mainView.ShowInscricoesView += ShowInscricaoView;
+            this.mainView.ShowAnoLetivoView += ShowAnoLetivoView;
+            this.mainView.ShowEpocaAvaliacaoView += ShowEpocaAvaliacaoView;
+            this.mainView.ShowEstadoEpocaView += ShowEstadoEpocaView;
+        }
+
+        private void ShowEstadoEpocaView(object? sender, EventArgs e)
+        {
+            IEstadoEpocaView view = EstadoEpocaView.GetInstance((MainView)mainView);
+            IEstadoEpoca model = new EstadoEpocaDbLogic();
+            new EstadoEpocaController(view, model);
+        }
+
+        private void ShowEpocaAvaliacaoView(object? sender, EventArgs e)
+        {
+            IEpocaAvaliacaoView view = EpocaAvaliacaoView.GetInstance((MainView)mainView);
+            IEpocaAvaliacao model = new EpocaAvaliacaoDbLogic();
+            new EpocaAvaliacaoController(view, model);
+        }
+
+        private void ShowAnoLetivoView(object? sender, EventArgs e)
+        {
+            IAnoLetivoView view = AnoLetivoView.GetInstance((MainView)mainView);
+            IAnoLetivo model = new AnoLetivoDbLogic();
+            new AnoLetivoController(view, model);
+        }
+
+        private void ShowInscricaoView(object? sender, EventArgs e)
+        {
+            IInscricaoView view = InscricaoView.GetInstance((MainView)mainView);
+            IInscricao model = new InscricaoDbLogic();
+            new InscricaoController(view, model);
+        }
+
+        private void ShowDocenteView(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void ShowCursoView(object? sender, EventArgs e)

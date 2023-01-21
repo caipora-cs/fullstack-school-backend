@@ -149,7 +149,7 @@ namespace EscolaDBWinForm.Controller
           - No caso de o aluno faltar a uma época de avaliação o campo presença deve
           ser preenchido com “F” e o idEstadoEpoca automaticamente preenchido
           com o correspondente à descrição “Admitido”.
-             4. Em qualquer época de avaliação, o lançamento de uma nota com valor maior ou
+          XXX 4. Em qualquer época de avaliação, o lançamento de uma nota com valor maior ou
           igual que dez (10), implica que que a presença deve ficar com o valor “P” e o
           idEstadoEpoca correspondente à descrição “Aprovado”.
           XXX 5. Não pode existir a inscrição numa época de avaliação subsequente a uma época

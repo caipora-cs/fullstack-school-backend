@@ -20,15 +20,21 @@ namespace EscolaDBWinForm.View
             btn_AlunosView.Click += delegate { ShowAlunosView?.Invoke(this, EventArgs.Empty); };
             btn_CursosView.Click += delegate { ShowCursosView?.Invoke(this, EventArgs.Empty); };
             btn_UCsView.Click += delegate { ShowUnidadeCurricularView?.Invoke(this, EventArgs.Empty); };
+            btn_AnosView.Click += delegate { ShowAnoLetivoView?.Invoke(this, EventArgs.Empty); };
+            btn_EpocasAView.Click += delegate { ShowEpocaAvaliacaoView?.Invoke(this, EventArgs.Empty); };
+            btn_EEpocasView.Click += delegate { ShowEstadoEpocaView?.Invoke(this, EventArgs.Empty); };
+            btn_InscricaosView.Click += delegate { ShowInscricoesView?.Invoke(this, EventArgs.Empty); };
+            btn_DocentesView.Click += delegate { ShowDocentesView?.Invoke(this, EventArgs.Empty); };
+
         }
 
         public event EventHandler ShowAlunosView;
         public event EventHandler ShowCursosView;
         public event EventHandler ShowUnidadeCurricularView;
-        public event EventHandler ShowDocente;
-        public event EventHandler ShowInscricao;
-        public event EventHandler ShowAnoLetivo;
-        public event EventHandler ShowEpocaAvaliacao;
-        public event EventHandler ShowEstadoEpoca;
+        public event EventHandler ShowDocentesView;
+        public event EventHandler ShowInscricoesView;
+        public event EventHandler ShowAnoLetivoView;
+        public event EventHandler ShowEpocaAvaliacaoView;
+        public event EventHandler ShowEstadoEpocaView;
     }
 }
