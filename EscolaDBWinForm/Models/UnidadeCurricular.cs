@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -40,13 +41,19 @@ public partial class UnidadeCurricular
     [Unicode(false)]
     public string Semestre { get; set; } = null!;
 
+
+    [Browsable(false)]
     [InverseProperty("IdUnidadeCurricularNavigation")]
     public virtual ICollection<Inscricao> Inscricaos { get; } = new List<Inscricao>();
 
+    
+    [Browsable(false)]
     [ForeignKey("NumeroDocente")]
     [InverseProperty("UnidadeCurriculars")]
     public virtual Docente NumeroDocenteNavigation { get; set; } = null!;
 
+
+    [Browsable(false)]
     [ForeignKey("ReferenciaCurso")]
     [InverseProperty("UnidadeCurriculars")]
     public virtual Curso ReferenciaCursoNavigation { get; set; } = null!;

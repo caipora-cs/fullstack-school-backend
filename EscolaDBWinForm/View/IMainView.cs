@@ -17,5 +17,7 @@ namespace EscolaDBWinForm.View
         event EventHandler ShowAnoLetivoView;
         event EventHandler ShowEpocaAvaliacaoView;
         event EventHandler ShowEstadoEpocaView;
+        event EventHandler AcercaView;
+        event EventHandler SairView;
     }
 }

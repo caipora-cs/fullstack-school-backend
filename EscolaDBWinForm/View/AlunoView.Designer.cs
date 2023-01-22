@@ -41,6 +41,8 @@
             this.tB_Search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tab_AlunoDetalhe = new System.Windows.Forms.TabPage();
+            this.btn_Upload = new System.Windows.Forms.Button();
+            this.pb_FotoAluno = new System.Windows.Forms.PictureBox();
             this.tb_NumeroAluno = new System.Windows.Forms.TextBox();
             this.dTimeP_AnoCurso = new System.Windows.Forms.DateTimePicker();
             this.dTimeP_DataNascimento = new System.Windows.Forms.DateTimePicker();
@@ -67,6 +69,7 @@
             this.tab_AlunosLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).BeginInit();
             this.tab_AlunoDetalhe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_FotoAluno)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -204,6 +207,8 @@
             // 
             // tab_AlunoDetalhe
             // 
+            this.tab_AlunoDetalhe.Controls.Add(this.btn_Upload);
+            this.tab_AlunoDetalhe.Controls.Add(this.pb_FotoAluno);
             this.tab_AlunoDetalhe.Controls.Add(this.tb_NumeroAluno);
             this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_AnoCurso);
             this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_DataNascimento);
@@ -232,6 +237,24 @@
             this.tab_AlunoDetalhe.TabIndex = 1;
             this.tab_AlunoDetalhe.Text = "Aluno Detalhe";
             this.tab_AlunoDetalhe.UseVisualStyleBackColor = true;
+            // 
+            // btn_Upload
+            // 
+            this.btn_Upload.Location = new System.Drawing.Point(699, 149);
+            this.btn_Upload.Name = "btn_Upload";
+            this.btn_Upload.Size = new System.Drawing.Size(55, 23);
+            this.btn_Upload.TabIndex = 26;
+            this.btn_Upload.Text = "Upload";
+            this.btn_Upload.UseVisualStyleBackColor = true;
+            // 
+            // pb_FotoAluno
+            // 
+            this.pb_FotoAluno.Location = new System.Drawing.Point(554, 46);
+            this.pb_FotoAluno.Name = "pb_FotoAluno";
+            this.pb_FotoAluno.Size = new System.Drawing.Size(139, 126);
+            this.pb_FotoAluno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_FotoAluno.TabIndex = 25;
+            this.pb_FotoAluno.TabStop = false;
             // 
             // tb_NumeroAluno
             // 
@@ -282,6 +305,7 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Cancel.Location = new System.Drawing.Point(648, 281);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(93, 41);
@@ -291,6 +315,7 @@
             // 
             // btn_Save
             // 
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.Location = new System.Drawing.Point(554, 281);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(88, 41);
@@ -422,6 +447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alunos)).EndInit();
             this.tab_AlunoDetalhe.ResumeLayout(false);
             this.tab_AlunoDetalhe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_FotoAluno)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,5 +488,7 @@
         private DateTimePicker dTimeP_DataNascimento;
         private Button btn_Close;
         private TextBox tb_NumeroAluno;
+        private PictureBox pb_FotoAluno;
+        private Button btn_Upload;
     }
 }

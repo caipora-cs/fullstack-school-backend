@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,8 @@ public partial class Docente
     [Column("salario", TypeName = "decimal(10, 2)")]
     public decimal Salario { get; set; }
 
+
+    [Browsable(false)]
     [InverseProperty("NumeroDocenteNavigation")]
     public virtual ICollection<UnidadeCurricular> UnidadeCurriculars { get; } = new List<UnidadeCurricular>();
 }

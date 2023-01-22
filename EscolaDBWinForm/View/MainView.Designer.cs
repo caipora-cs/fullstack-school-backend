@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Sair = new System.Windows.Forms.Button();
+            this.btn_Acerca = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_DocentesView = new System.Windows.Forms.Button();
             this.btn_InscricaosView = new System.Windows.Forms.Button();
             this.btn_EEpocasView = new System.Windows.Forms.Button();
@@ -38,11 +41,15 @@
             this.btn_CursosView = new System.Windows.Forms.Button();
             this.btn_AlunosView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.btn_Sair);
+            this.panel1.Controls.Add(this.btn_Acerca);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btn_DocentesView);
             this.panel1.Controls.Add(this.btn_InscricaosView);
             this.panel1.Controls.Add(this.btn_EEpocasView);
@@ -54,8 +61,36 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 450);
+            this.panel1.Size = new System.Drawing.Size(167, 601);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_Sair
+            // 
+            this.btn_Sair.Location = new System.Drawing.Point(86, 0);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(81, 64);
+            this.btn_Sair.TabIndex = 9;
+            this.btn_Sair.Text = "Sair";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            // 
+            // btn_Acerca
+            // 
+            this.btn_Acerca.Location = new System.Drawing.Point(0, 0);
+            this.btn_Acerca.Name = "btn_Acerca";
+            this.btn_Acerca.Size = new System.Drawing.Size(90, 64);
+            this.btn_Acerca.TabIndex = 8;
+            this.btn_Acerca.Text = "Acerca";
+            this.btn_Acerca.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EscolaDBWinForm.Properties.Resources.ipt_logo_1924648262;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 447);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(167, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_DocentesView
             // 
@@ -141,12 +176,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(939, 601);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Name = "MainView";
             this.Text = "MainView";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +198,8 @@
         private Button btn_EEpocasView;
         private Button btn_EpocasAView;
         private Button btn_AnosView;
+        private Button btn_Sair;
+        private Button btn_Acerca;
+        private PictureBox pictureBox1;
     }
 }

@@ -101,7 +101,9 @@ namespace EscolaDBWinForm.View
                     //Quando clickado adiciona a tab de Listagem
                     tabControl1.TabPages.Add(tab_AlunosLista);
             };
-            
+
+            btn_Upload.Click += delegate { UploadEvent?.Invoke(this, EventArgs.Empty); };
+
 
         }
 
@@ -124,6 +126,32 @@ namespace EscolaDBWinForm.View
             set { tb_Curso.Text = value.ToString(); }
         }
         public DateTime AnoCursoAluno { get => dTimeP_AnoCurso.Value; set => dTimeP_AnoCurso.Value = value; }
+        //Convert image to byte array and vice versa for database storage of FotoAluno 
+        public byte[]? FotoAluno
+        {
+            get
+            {
+                MemoryStream ms = new MemoryStream();
+                pb_FotoAluno.Image.Save(ms, pb_FotoAluno.Image.RawFormat);
+                return ms.GetBuffer();
+            }
+            set
+            {
+                //Let the value be null here
+                if (value != null)
+                {
+                    MemoryStream ms = new MemoryStream(value);
+                    pb_FotoAluno.Image = Image.FromStream(ms);
+                }
+                //if value is null, then set the image to empty
+                else
+                {
+                    pb_FotoAluno.Image = null;
+                }
+            }
+        }
+
+
         public string SearchValue { get =>  tB_Search.Text; set => tB_Search.Text = value; }
         public bool IsEdit { get => isEdit; set => isEdit = value; }
         public bool IsSuccessful { get => isSuccessful; set => isSuccessful = value; }
@@ -136,11 +164,16 @@ namespace EscolaDBWinForm.View
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler UploadEvent;
 
         //Metodos
         public void SetAlunoListBindingSource(BindingSource alunoList)
         {
             dgv_Alunos.DataSource = alunoList;
+        }
+        public void SetAlunoImage(Image image)
+        {
+            pb_FotoAluno.Image = image;
         }
 
         //Single Page enforcer: Abre um form apenas.

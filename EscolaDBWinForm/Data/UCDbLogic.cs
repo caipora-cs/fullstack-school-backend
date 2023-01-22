@@ -46,10 +46,13 @@ namespace EscolaDBWinForm.Data
         {
             return _context.UnidadeCurriculars.ToList();
         }
-
+        
+        //Metodo para buscar UCs por curso, ano, semestre 
         public IEnumerable<UnidadeCurricular> GetByValue(string value)
         {
-            return _context.UnidadeCurriculars.Where(c => c.Nome.Contains(value) || c.Sigla.Contains(value)).ToList();
+            //Possivel filtrar as UCs por curso, ano, semestre, nome e sigla
+            return _context.UnidadeCurriculars.Where(uc => uc.Nome.Contains(value) || uc.Sigla.Contains(value) || uc.Ano.Contains(value) ||uc.Semestre.Contains(value)||uc.ReferenciaCurso.ToString().Contains(value)).ToList();
+
         }
 
         public ICollection<Inscricao> GetInscricao(int id)

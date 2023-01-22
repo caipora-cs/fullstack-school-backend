@@ -25,6 +25,21 @@ namespace EscolaDBWinForm.Controller
             this.mainView.ShowAnoLetivoView += ShowAnoLetivoView;
             this.mainView.ShowEpocaAvaliacaoView += ShowEpocaAvaliacaoView;
             this.mainView.ShowEstadoEpocaView += ShowEstadoEpocaView;
+            this.mainView.AcercaView += ShowAcercaView;
+            this.mainView.SairView += SairView;
+        }
+
+        private void SairView(object? sender, EventArgs e)
+        {
+            //Fechar programa quando clicar no botão Sair da MainView 
+            Environment.Exit(0);
+
+        }
+
+        private void ShowAcercaView(object? sender, EventArgs e)
+        {
+            //Mostrar a View Acerca com o metodo GetInstance da classe AcercaView 
+            AcercaView.GetInstance((MainView)mainView).Show();
         }
 
         private void ShowEstadoEpocaView(object? sender, EventArgs e)

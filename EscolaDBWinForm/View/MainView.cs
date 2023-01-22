@@ -25,6 +25,8 @@ namespace EscolaDBWinForm.View
             btn_EEpocasView.Click += delegate { ShowEstadoEpocaView?.Invoke(this, EventArgs.Empty); };
             btn_InscricaosView.Click += delegate { ShowInscricoesView?.Invoke(this, EventArgs.Empty); };
             btn_DocentesView.Click += delegate { ShowDocentesView?.Invoke(this, EventArgs.Empty); };
+            btn_Acerca.Click += delegate { AcercaView?.Invoke(this, EventArgs.Empty); };
+            btn_Sair.Click += delegate { SairView?.Invoke(this, EventArgs.Empty); };
 
         }
 
@@ -36,5 +38,7 @@ namespace EscolaDBWinForm.View
         public event EventHandler ShowAnoLetivoView;
         public event EventHandler ShowEpocaAvaliacaoView;
         public event EventHandler ShowEstadoEpocaView;
+        public event EventHandler AcercaView;
+        public event EventHandler SairView;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ public partial class AnoLetivo
     [Column("anoFinal")]
     public short AnoFinal { get; set; }
 
+    [Browsable(false)]
     [InverseProperty("IdAnoLetivoNavigation")]
     public virtual ICollection<Inscricao> Inscricaos { get; } = new List<Inscricao>();
 }

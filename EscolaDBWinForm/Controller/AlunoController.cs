@@ -32,6 +32,7 @@ namespace EscolaDBWinForm.Controller
             this._view.DeleteEvent += DeleteSelectedAluno;
             this._view.SaveEvent += SaveAluno;
             this._view.CancelEvent += CancelAction;
+            this._view.UploadEvent += UploadImage;
             //Liga o BindingSource ao Model - Cria uma biding entre o Controller de Data e o Source da Data
             this._view.SetAlunoListBindingSource(alunosBindingSource); //Liga a data source do DataGridView componente aos dados do BindingSource Alunos
             //Carrega a lista de alunos no View
@@ -39,7 +40,19 @@ namespace EscolaDBWinForm.Controller
             //Mostra o View
             this._view.Show();
         }
-        
+
+        private void UploadImage(object? sender, EventArgs e)
+        {
+            //Abre um File Dialog para o utilizador escolher uma imagem que sera carregada para o PictureBox pb_FotoAluno no View
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Carrega a imagem para o PictureBox
+                this._view.SetAlunoImage(Image.FromFile(openFileDialog.FileName));
+            }
+        }
+
         //Metodos
         private void LoadAlunosList()
         {
@@ -64,6 +77,7 @@ namespace EscolaDBWinForm.Controller
             model.Email = _view.EmailAluno;
             model.Telefone = _view.TelefoneAluno;
             model.ReferenciaCurso = Convert.ToInt32(_view.CursoAluno);//Quebra quando escreve Nome do Curso
+            model.Foto = _view.FotoAluno;
             //Apanha os possiveis Erros da operacao - sempre que houver ligacao direta de ir ou vir da DB convem ouvir os erros
             try
             {
@@ -148,6 +162,7 @@ namespace EscolaDBWinForm.Controller
             _view.EmailAluno = aluno.Email;
             _view.TelefoneAluno = aluno.Telefone;
             _view.CursoAluno = aluno.ReferenciaCurso;
+            _view.FotoAluno = aluno.Foto;
             //_view.AnoCursoAluno = aluno.AnoCurso; <== Buscar data da ultima Inscricao Type:Datetime
             //Adicionar Foto e PictureBox
             //IsEdit diz se algo foi mudado ou nao para que o SaveEvent saiba se e para adicionar ou editar

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -24,9 +25,12 @@ public partial class Curso
     [Column("dataInicio", TypeName = "date")]
     public DateTime DataInicio { get; set; }
 
+    [Browsable(false)]
     [InverseProperty("ReferenciaCursoNavigation")]
     public virtual ICollection<Aluno> Alunos { get; } = new List<Aluno>();
 
+
+    [Browsable(false)]
     [InverseProperty("ReferenciaCursoNavigation")]
     public virtual ICollection<UnidadeCurricular> UnidadeCurriculars { get; } = new List<UnidadeCurricular>();
 }

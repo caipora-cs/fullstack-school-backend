@@ -93,37 +93,39 @@ namespace EscolaDBWinForm.View
 
         public int IdUCInscricao
         {
-            get { return Convert.ToInt32(cb_UCInscricao.Text); }
+            //get the selected item underlying Id from the Database (not the displayed text) and return it
+            get { return Convert.ToInt32(cb_UCInscricao.SelectedValue); }
             set { cb_UCInscricao.Text = value.ToString(); }
         }
 
         public short IdAnoInscricao
         {
-            get { return Convert.ToInt16(cb_AnoInscricao.Text); }
+            get { return Convert.ToInt16(cb_AnoInscricao.SelectedValue); }
             set { cb_AnoInscricao.Text = value.ToString(); }
         }
 
         public string IdEpocaAInscricao
         {
-            get { return cb_EpocaAInscricao.Text; }
+            get { return cb_EpocaAInscricao.SelectedValue.ToString(); }
             set { cb_EpocaAInscricao.Text = value; }
         }
 
-        public short IdEEpocaInscricao
+        public short? IdEEpocaInscricao
         {
-            get { return Convert.ToInt16(cb_EEpocaInscricao.Text); }
+            get { return Convert.ToInt16(cb_EEpocaInscricao.SelectedValue); }
             set { cb_EEpocaInscricao.Text = value.ToString(); }
         }
 
-        public string PresencaInscricao
+        public string? PresencaInscricao
         {
             get { return tb_PresencaInscricao.Text; }
             set { tb_PresencaInscricao.Text = value; }
         }
 
-        public short NotaInscricao
+        public short? NotaInscricao
         {
-            get { return Convert.ToInt16(tb_NotaInscricao.Text); }
+            // Check if the value is null, if it is, return null, otherwise return the value converted to short
+            get { return string.IsNullOrEmpty(tb_NotaInscricao.Text) ? (short?)null : Convert.ToInt16(tb_NotaInscricao.Text); }
             set { tb_NotaInscricao.Text = value.ToString(); }
         }
         //State        

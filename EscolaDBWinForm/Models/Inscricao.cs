@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -39,18 +40,22 @@ public partial class Inscricao
     [Column("nota")]
     public short? Nota { get; set; }
 
+    [Browsable(false)]
     [ForeignKey("IdAnoLetivo")]
     [InverseProperty("Inscricaos")]
     public virtual AnoLetivo IdAnoLetivoNavigation { get; set; } = null!;
 
+    [Browsable(false)]
     [ForeignKey("IdEstadoEpoca")]
     [InverseProperty("Inscricaos")]
     public virtual EstadoEpoca? IdEstadoEpocaNavigation { get; set; }
 
+    [Browsable(false)]
     [ForeignKey("IdUnidadeCurricular")]
     [InverseProperty("Inscricaos")]
     public virtual UnidadeCurricular IdUnidadeCurricularNavigation { get; set; } = null!;
 
+    [Browsable(false)]
     [ForeignKey("NumeroAluno")]
     [InverseProperty("Inscricaos")]
     public virtual Aluno NumeroAlunoNavigation { get; set; } = null!;

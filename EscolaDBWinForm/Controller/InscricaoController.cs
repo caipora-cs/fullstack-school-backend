@@ -71,6 +71,10 @@ namespace EscolaDBWinForm.Controller
 
             var inscricao = (Inscricao)inscricaoBindingSource.Current;
             //Popula as ComboBoxes 
+            ucList = _model.GetUCList();
+            anoList = _model.GetAnoList();
+            eepocaList = _model.GetEEpocaList();
+            epocaaList = _model.GetEpocaAList();
             ucBindingSource.DataSource = ucList;
             anoBindingSource.DataSource = anoList;
             eepocaBindingSource.DataSource = eepocaList;
@@ -80,9 +84,17 @@ namespace EscolaDBWinForm.Controller
             _view.NumeroAlunoInscricao = inscricao.NumeroAluno;
             _view.IdUCInscricao = inscricao.IdUnidadeCurricular;
             _view.IdAnoInscricao = inscricao.IdAnoLetivo;
-            _view.IdEEpocaInscricao = (short)inscricao.IdEstadoEpoca;
+            if (inscricao.IdEstadoEpoca != null)
+            {
+                _view.IdEEpocaInscricao = inscricao.IdEstadoEpoca;
+            }
+            else { _view.IdEpocaAInscricao = ""; }
             _view.IdEpocaAInscricao = inscricao.IdEpocaAvaliacao;
-            _view.NotaInscricao = (short)inscricao.Nota;
+            if (inscricao.Nota != null)
+            {
+                _view.NotaInscricao = inscricao.Nota;
+            }
+            else { _view.NotaInscricao = 0; }
             _view.PresencaInscricao = inscricao.Presenca;
             _view.IsEdit = true;
 
@@ -137,11 +149,8 @@ namespace EscolaDBWinForm.Controller
             _view.IdEEpocaInscricao = 0;
             _view.PresencaInscricao = "";
             _view.NotaInscricao = 0;
-            _view.IsEdit = false;
         }
         /*Regras de Negócio
-          XXX 1. A primeira inscrição de um aluno numa disciplina num dado ano letivo tem de ser
-          sempre para a Época de Avaliação de Frequência;
           2. Uma inscrição em Época Normal de Exame é feita automaticamente quando:
           XXXX - É lançada uma nota com valor menor que dez (10), caso em que a
           presença deve ficar com o valor “P” e o idEstadoEpoca correspondente à
@@ -166,6 +175,10 @@ e a imediatamente anterior à Época Especial é a Época de Recurso.
         {
             ClearView();
             //Popula as ComboBoxes
+            ucList = _model.GetUCList();
+            anoList = _model.GetAnoList();
+            eepocaList = _model.GetEEpocaList();
+            epocaaList = _model.GetEpocaAList();
             ucBindingSource.DataSource = ucList;
             anoBindingSource.DataSource = anoList;
             eepocaBindingSource.DataSource = eepocaList;
@@ -181,97 +194,82 @@ e a imediatamente anterior à Época Especial é a Época de Recurso.
             model.IdUnidadeCurricular = _view.IdUCInscricao;
             model.IdAnoLetivo = _view.IdAnoInscricao;
             model.IdEpocaAvaliacao = _view.IdEpocaAInscricao;
-            model.IdEstadoEpoca = _view.IdEEpocaInscricao;
-            model.Presenca = _view.PresencaInscricao;
-            model.Nota = _view.NotaInscricao;
-            // Cheka se e a primeira inscricao do aluno na UC no ano letivo e so deixa salvar se for EFRE - Epoca de Frequencia
-            if (model.IdEpocaAvaliacao != "EFRE")
+            if (_view.IdEEpocaInscricao == 0)
             {
-                var inscricao = _model.GetInscricaoByAlunoAndUCAndAno(model.NumeroAluno, model.IdUnidadeCurricular, model.IdAnoLetivo);
-                if (inscricao == null)
+                model.IdEstadoEpoca = null;
+            }
+            else
+            {
+                model.IdEstadoEpoca = _view.IdEEpocaInscricao;
+            }
+            if (_view.PresencaInscricao == "")
+            {
+                model.Presenca = null;
+            }
+            else
+            {
+                model.Presenca = _view.PresencaInscricao;
+            }
+            if (_view.NotaInscricao == 0)
+            {
+                model.Nota = null;
+            }
+            else
+            {
+                model.Nota = _view.NotaInscricao;
+            }
+            //Regras de Negócio
+            // 1. A primeira inscrição de um aluno numa disciplina num dado ano letivo tem de ser sempre para a Época de Avaliação de Frequência;
+            // Vai buscar a lista de inscrições do aluno e verifica se já existe alguma inscrição para a UC e Ano selecionados
+            var inscricaoList = _model.GetByValue(model.NumeroAluno);
+            var inscricao = inscricaoList.Where(i => i.IdUnidadeCurricular == model.IdUnidadeCurricular && i.IdAnoLetivo == model.IdAnoLetivo).FirstOrDefault();
+            if (inscricao == null)
+            {
+                if (model.IdEpocaAvaliacao != "EFRE")
                 {
                     MessageBox.Show("A primeira inscrição de um aluno numa disciplina num dado ano letivo tem de ser sempre para a Época de Avaliação de Frequência");
                     return;
                 }
             }
-            //Cheka se o Aluno ja foi aprovado na UC no ano letivo e nao deixa salvar
-            var inscricaoAprovado = _model.GetInscricaoByAlunoAndUCAndAnoAndEstadoEpoca(model.NumeroAluno, model.IdUnidadeCurricular, model.IdAnoLetivo, 30);
-            if (inscricaoAprovado != null)
-            {
-                MessageBox.Show("Não pode existir a inscrição numa época de avaliação subsequente a uma época de avaliação com o o idEstadoEpoca correspondente à descrição “Aprovado”.");
-                return;
-            }
-            // Cheka se o Aluno possui uma inscricao anterior em Epoca Normal de Exame Reprovada para deixar adicionar uma Inscricao em Epoca de Avaliacao de Recurso
-            if (model.IdEpocaAvaliacao == "EREC")
-            {
-                var inscricaoReprovado = _model.GetInscricaoByAlunoAndUCAndAnoAndEstadoEpocaAndEpocaAvaliacao(model.NumeroAluno, model.IdUnidadeCurricular, model.IdAnoLetivo, 20, "ENEX");
-                if (inscricaoReprovado == null)
-                {
-                    MessageBox.Show("A época imediatamente anterior à Época de Recurso é a Época Normal de Exame e o Aluno nao possui uma inscricao anterior em Epoca Normal de Exame Reprovada");
-                    return;
-                }
-            }
-            //Cheka se o Aluno possui uma inscricao anterior em Epoca de Avaliacao de Recurso Reprovada para deixar adicionar uma Inscricao em Epoca Especial
-            if (model.IdEpocaAvaliacao == "EESP")
-            {
-                var inscricaoReprovado = _model.GetInscricaoByAlunoAndUCAndAnoAndEstadoEpocaAndEpocaAvaliacao(model.NumeroAluno, model.IdUnidadeCurricular, model.IdAnoLetivo, 20, "EREC");
-                if (inscricaoReprovado == null)
-                {
-                    MessageBox.Show("A época imediatamente anterior à Época Especial é a Época de Recurso e o Aluno nao possui uma inscricao anterior em Epoca de Avaliacao de Recurso Reprovada");
-                    return;
-                }
-            }
 
-            // Cheka a Nota , se for menor que 10 ou a presenca for diferente de P, e for em EFRE - Epoca de Frequencia salva essa e cria uma nova inscricao automaticamente em ENEX - Epoca Normal de Exame com o idEstadoEpoca em 10 - Adimitido, mesmo numero de aluno e UC e ano letivo
-            // Se a Nota for NULL deixa salvar
+            // 2. Uma inscrição em Época Normal de Exame é feita automaticamente quando:
+            // - É lançada uma nota com valor menor que dez (10), caso em que a presença deve ficar com o valor “P” e o idEstadoEpoca correspondente à descrição “Admitido”.
+            // - No caso de o aluno faltar a uma época de avaliação o campo presença deve ser preenchido com “F” e o idEstadoEpoca automaticamente preenchido com o correspondente à descrição “Admitido”.
+            if (model.IdEpocaAvaliacao == "EFRE")
+            {
+                if (model.Nota < 10 || model.Nota != null)
+                {
+                    model.Presenca = "P";
+                    model.IdEstadoEpoca = 10;
+                    //Adiciona uma Inscricao em Epoca Normal de Exame - ENEX para o aluno em questao 
+                }
+                else if (model.Presenca == "F")
+                {
+                    model.IdEstadoEpoca = 10;
+                }
+            }
 
             try
             {
-                if (model.Nota != null)
+                new ModelDataValidation().ValidateModelData(model);
+                if (_view.IsEdit)
                 {
-                    if (model.IdEpocaAvaliacao == "EFRE" && (model.Nota < 10 || model.Presenca != "P"))
-                    {
-                        _model.Add(model);
-                        var inscricaoENEX = new Inscricao();
-                        inscricaoENEX.NumeroAluno = model.NumeroAluno;
-                        inscricaoENEX.IdUnidadeCurricular = model.IdUnidadeCurricular;
-                        inscricaoENEX.IdAnoLetivo = model.IdAnoLetivo;
-                        inscricaoENEX.IdEpocaAvaliacao = "ENEX";
-                        inscricaoENEX.IdEstadoEpoca = 10;
-                        inscricaoENEX.Presenca = "";
-                        inscricaoENEX.Nota = 0;
-                        _model.Add(inscricaoENEX);
-                        _view.Message = "Foi adicionada uma inscricao em Epoca de Exame automaticamente ao respectivo Aluno";
-                    }
-                    //Adiciona uma nova condicao se a nota for maior que 10 popular a presenca com P e o estado da epoca aprovado com 30 
-                    else if (model.Nota >= 10)
-                    {
-                        model.Presenca = "P";
-                        model.IdEstadoEpoca = 30;
-                    }
-
-                    else
-                    {
-                        if (_view.IsEdit)
-                        {
-                            _model.Edit(model);
-                            _view.Message = "Inscrição editada com sucesso";
-                        }
-                        else
-                        {
-                            _model.Add(model);
-                            _view.Message = "Inscrição adicionada com sucesso";
-                        }
-                        _view.IsSuccessful = true;
-                        LoadInscricaoList();
-                        _view.Message = "Inscrição guardada com sucesso!";
-
-                    }
+                    _model.Edit(model);
+                    _view.Message = "Inscrição editada com sucesso!";
                 }
+                else
+                {
+                    _model.Add(model);
+                    _view.Message = "Inscrição adicionada com sucesso!";
+                }
+                _view.IsSuccessful = true;
+                _view.Message = "Inscrição guardada com sucesso!";
+                LoadInscricaoList();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _view.Message = ex.Message;
+                _view.IsSuccessful = false;
             }
             finally
             {
@@ -308,7 +306,7 @@ e a imediatamente anterior à Época Especial é a Época de Recurso.
             if (emptyValue == false)
             {
                 //Pesquisa por valor
-                inscricaoList = _model.GetByValue(this._view.SearchValue);
+                inscricaoList = _model.GetByValue(Convert.ToInt32(this._view.SearchValue));
                 //Update da lista 
                 inscricaoBindingSource.DataSource = inscricaoList;
             }

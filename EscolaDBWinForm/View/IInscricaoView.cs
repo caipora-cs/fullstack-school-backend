@@ -13,9 +13,9 @@ namespace EscolaDBWinForm.View
         int IdUCInscricao { get; set; }
         short IdAnoInscricao { get; set; }
         string IdEpocaAInscricao { get; set; }
-        short IdEEpocaInscricao { get; set; }
-        string PresencaInscricao { get; set; }
-        short NotaInscricao { get; set; }
+        short? IdEEpocaInscricao { get; set; }
+        string? PresencaInscricao { get; set; }
+        short? NotaInscricao { get; set; }
         //State
         string SearchValue { get; set; }
         bool IsEdit { get; set; }

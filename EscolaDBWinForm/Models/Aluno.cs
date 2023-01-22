@@ -49,10 +49,14 @@ public partial class Aluno
     [Column("foto", TypeName = "image")]
     public byte[]? Foto { get; set; }
 
+    //DataAnnotation para esconder a coluna Inscricoes na GridView
+    [Browsable(false)]
     [DisplayName("Iscricoes")]
     [InverseProperty("NumeroAlunoNavigation")]
     public virtual ICollection<Inscricao> Inscricaos { get; } = new List<Inscricao>();
 
+    //DataAnnotation para esconder a coluna ReferenciaCurso na GridView
+    [Browsable(false)]
     [ForeignKey("ReferenciaCurso")]
     [InverseProperty("Alunos")]
     public virtual Curso ReferenciaCursoNavigation { get; set; } = null!;
