@@ -150,27 +150,6 @@ namespace EscolaDBWinForm.Controller
             _view.PresencaInscricao = "";
             _view.NotaInscricao = 0;
         }
-        /*Regras de Negócio
-          2. Uma inscrição em Época Normal de Exame é feita automaticamente quando:
-          XXXX - É lançada uma nota com valor menor que dez (10), caso em que a
-          presença deve ficar com o valor “P” e o idEstadoEpoca correspondente à
-          descrição “Admitido”.
-          - No caso de o aluno faltar a uma época de avaliação o campo presença deve
-          ser preenchido com “F” e o idEstadoEpoca automaticamente preenchido
-          com o correspondente à descrição “Admitido”.
-          XXX 4. Em qualquer época de avaliação, o lançamento de uma nota com valor maior ou
-          igual que dez (10), implica que que a presença deve ficar com o valor “P” e o
-          idEstadoEpoca correspondente à descrição “Aprovado”.
-          XXX 5. Não pode existir a inscrição numa época de avaliação subsequente a uma época
-          de avaliação com o o idEstadoEpoca correspondente à descrição “Aprovado”.*/
-        /*XXX 3. A inscrição em Época de Avaliação de Recurso e Época Especial devem ser
-efetuadas manualmente e têm obrigatoriamente de existir uma época de avaliação
-imediatamente anterior válida, isto é, com o idEstadoEpoca preenchido com o
-correspondente à descrição “Reprovado”.
-A época imediatamente anterior à Época de Recurso é a Época Normal de Exame
-e a imediatamente anterior à Época Especial é a Época de Recurso.
-*/
-
         private void AddNewInscricao(object sender, EventArgs e)
         {
             ClearView();
@@ -237,17 +216,110 @@ e a imediatamente anterior à Época Especial é a Época de Recurso.
             // - No caso de o aluno faltar a uma época de avaliação o campo presença deve ser preenchido com “F” e o idEstadoEpoca automaticamente preenchido com o correspondente à descrição “Admitido”.
             if (model.IdEpocaAvaliacao == "EFRE")
             {
-                if (model.Nota < 10 || model.Nota != null)
+
+                if (model.Nota < 10 && model.Nota != null)
                 {
                     model.Presenca = "P";
                     model.IdEstadoEpoca = 10;
-                    //Adiciona uma Inscricao em Epoca Normal de Exame - ENEX para o aluno em questao 
+                    //Adiciona uma outra Inscricao em Epoca Normal de Exame - ENEX para o aluno em questao 
+                    var modelexame = new Inscricao();
+                    modelexame.NumeroAluno = model.NumeroAluno;
+                    modelexame.IdUnidadeCurricular = model.IdUnidadeCurricular;
+                    modelexame.IdAnoLetivo = model.IdAnoLetivo;
+                    modelexame.IdEpocaAvaliacao = "ENEX";
+                    modelexame.Presenca = "";
+                    modelexame.Nota = null;
+                    modelexame.IdEstadoEpoca = null;
+                    _model.Add(modelexame);
+                    MessageBox.Show("Devido à nota inferior a 10, foi adicionada uma inscrição em Época Normal de Exame para o respectivo aluno");
                 }
+
                 else if (model.Presenca == "F")
                 {
                     model.IdEstadoEpoca = 10;
+                    //Adiciona uma outra Inscricao em Epoca Normal de Exame - ENEX para o aluno em questao 
+                    var modelexame = new Inscricao();
+                    modelexame.NumeroAluno = model.NumeroAluno;
+                    modelexame.IdUnidadeCurricular = model.IdUnidadeCurricular;
+                    modelexame.IdAnoLetivo = model.IdAnoLetivo;
+                    modelexame.IdEpocaAvaliacao = "ENEX";
+                    modelexame.Presenca = "";
+                    modelexame.Nota = null;
+                    modelexame.IdEstadoEpoca = null;
+                    _model.Add(modelexame);
+                    MessageBox.Show("Devido à falta, foi adicionada uma inscrição em Época Normal de Exame para o respectivo aluno");
                 }
             }
+            /* 3. A inscrição em Época de Avaliação de Recurso e Época Especial devem ser
+            efetuadas manualmente e têm obrigatoriamente de existir uma época de avaliação
+            imediatamente anterior válida, isto é, com o idEstadoEpoca preenchido com o
+            correspondente à descrição “Reprovado”.
+            A época imediatamente anterior à Época de Recurso é a Época Normal de Exame
+            e a imediatamente anterior à Época Especial é a Época de Recurso.
+            */
+            if (model.IdEpocaAvaliacao == "EREC" || model.IdEpocaAvaliacao == "EESP")
+            {
+                var inscricaoList2 = _model.GetByValue(model.NumeroAluno);
+                var inscricao2 = inscricaoList2.Where(i => i.IdUnidadeCurricular == model.IdUnidadeCurricular && i.IdAnoLetivo == model.IdAnoLetivo).FirstOrDefault();
+                if (inscricao2 == null)
+                {
+                    MessageBox.Show("Não existe uma época de avaliação imediatamente anterior válida");
+                    return;
+                }
+                else
+                {
+                    if (model.IdEpocaAvaliacao == "EREC")
+                    {
+                        if (inscricao2.IdEpocaAvaliacao != "ENEX")
+                        {
+                            MessageBox.Show("Nao existe época imediatamente anterior à Época de Recurso valido");
+                            return;
+                        }
+                        else if (inscricao2.IdEstadoEpoca != 20)
+                        {
+                            MessageBox.Show("Nao existe época imediatamente anterior à Época de Recurso valido");
+                            return;
+                        }
+                    }
+                    else if (model.IdEpocaAvaliacao == "EESP")
+                    {
+                        if (inscricao2.IdEpocaAvaliacao != "EREC")
+                        {
+                            MessageBox.Show("Nao existe epoca imediatamente anterior à Época Especial valido");
+                            return;
+                        }
+                        else if (inscricao2.IdEstadoEpoca != 20)
+                        {
+                            MessageBox.Show("Nao existe epoca imediatamente anterior à Época Especial valido");
+                            return;
+                        }
+                    }
+                }
+            }
+
+            /* 4. Em qualquer época de avaliação, o lançamento de uma nota com valor maior ou
+            igual que dez (10), implica que que a presença deve ficar com o valor “P” e o
+            idEstadoEpoca correspondente à descrição “Aprovado”.
+            */
+            if (model.Nota >= 10)
+            {
+                model.Presenca = "P";
+                model.IdEstadoEpoca = 30;
+            }
+            
+            /* 5. Não pode existir a inscrição numa época de avaliação subsequente a uma época
+              de avaliação com o o idEstadoEpoca correspondente à descrição “Aprovado”.*/
+            var inscricaoList3 = _model.GetByValue(model.NumeroAluno);
+            var inscricao3 = inscricaoList3.Where(i => i.IdUnidadeCurricular == model.IdUnidadeCurricular && i.IdAnoLetivo == model.IdAnoLetivo).FirstOrDefault();
+            if (inscricao3 != null)
+            {
+                if (inscricao3.IdEstadoEpoca == 30)
+                {
+                    MessageBox.Show("Não pode existir a inscrição numa época de avaliação subsequente a uma época de avaliação com o o idEstadoEpoca correspondente à descrição “Aprovado”");
+                    return;
+                }
+            }
+
 
             try
             {
@@ -263,7 +335,6 @@ e a imediatamente anterior à Época Especial é a Época de Recurso.
                     _view.Message = "Inscrição adicionada com sucesso!";
                 }
                 _view.IsSuccessful = true;
-                _view.Message = "Inscrição guardada com sucesso!";
                 LoadInscricaoList();
             }
             catch (Exception ex)
