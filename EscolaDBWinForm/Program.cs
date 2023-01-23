@@ -10,7 +10,7 @@ namespace EscolaDBWinForm
 {
     internal static class Program
     {
-        private static IConfigurationRoot _configuration;
+        public static IConfigurationRoot _configuration;
         private static DbContextOptionsBuilder<EscolaDBWinForm.Data.EscolaDbContext> _optionsBuilder;
         /// <summary>
         ///  The main entry point for the application.
@@ -30,14 +30,15 @@ namespace EscolaDBWinForm
             Application.Run((Form)view);
         }
 
-        static void BuildConfiguration() { 
-        IConfigurationBuilder builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
+        public static void BuildConfiguration() 
+        { 
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             _configuration = builder.Build();
         }
 
-        static void BuildOptions()
+        public static void BuildOptions()
         {
             _optionsBuilder = new DbContextOptionsBuilder<EscolaDBWinForm.Data.EscolaDbContext>();
             _optionsBuilder.UseSqlServer(_configuration.GetConnectionString("EscolaDB"));

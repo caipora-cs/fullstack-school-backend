@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using EscolaDBWinForm.Models;
+﻿using EscolaDBWinForm.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using static EscolaDBWinForm.Program;
 
 namespace EscolaDBWinForm.Data;
 
@@ -33,9 +33,17 @@ public partial class EscolaDbContext : DbContext
     public virtual DbSet<UnidadeCurricular> UnidadeCurriculars { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=192.168.247.128;Database=EscolaDB;User ID=jojof;Password=zjiab8hr;TrustServerCertificate=True;");
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            BuildConfiguration();
+            BuildOptions();
+         
+            var connString = _configuration.GetConnectionString("EscolaDB");
 
+            _ = optionsBuilder.UseSqlServer(connString);
+        }
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Aluno>(entity =>
