@@ -44,9 +44,7 @@
             this.btn_Upload = new System.Windows.Forms.Button();
             this.pb_FotoAluno = new System.Windows.Forms.PictureBox();
             this.tb_NumeroAluno = new System.Windows.Forms.TextBox();
-            this.dTimeP_AnoCurso = new System.Windows.Forms.DateTimePicker();
             this.dTimeP_DataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.AnoCurso = new System.Windows.Forms.Label();
             this.tb_Curso = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
@@ -210,9 +208,7 @@
             this.tab_AlunoDetalhe.Controls.Add(this.btn_Upload);
             this.tab_AlunoDetalhe.Controls.Add(this.pb_FotoAluno);
             this.tab_AlunoDetalhe.Controls.Add(this.tb_NumeroAluno);
-            this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_AnoCurso);
             this.tab_AlunoDetalhe.Controls.Add(this.dTimeP_DataNascimento);
-            this.tab_AlunoDetalhe.Controls.Add(this.AnoCurso);
             this.tab_AlunoDetalhe.Controls.Add(this.tb_Curso);
             this.tab_AlunoDetalhe.Controls.Add(this.label11);
             this.tab_AlunoDetalhe.Controls.Add(this.btn_Cancel);
@@ -264,28 +260,12 @@
             this.tb_NumeroAluno.Size = new System.Drawing.Size(102, 23);
             this.tb_NumeroAluno.TabIndex = 24;
             // 
-            // dTimeP_AnoCurso
-            // 
-            this.dTimeP_AnoCurso.Location = new System.Drawing.Point(554, 252);
-            this.dTimeP_AnoCurso.Name = "dTimeP_AnoCurso";
-            this.dTimeP_AnoCurso.Size = new System.Drawing.Size(187, 23);
-            this.dTimeP_AnoCurso.TabIndex = 22;
-            // 
             // dTimeP_DataNascimento
             // 
             this.dTimeP_DataNascimento.Location = new System.Drawing.Point(51, 167);
             this.dTimeP_DataNascimento.Name = "dTimeP_DataNascimento";
             this.dTimeP_DataNascimento.Size = new System.Drawing.Size(200, 23);
             this.dTimeP_DataNascimento.TabIndex = 21;
-            // 
-            // AnoCurso
-            // 
-            this.AnoCurso.AutoSize = true;
-            this.AnoCurso.Location = new System.Drawing.Point(560, 230);
-            this.AnoCurso.Name = "AnoCurso";
-            this.AnoCurso.Size = new System.Drawing.Size(29, 15);
-            this.AnoCurso.TabIndex = 19;
-            this.AnoCurso.Text = "Ano";
             // 
             // tb_Curso
             // 
@@ -299,9 +279,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(554, 175);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 15);
+            this.label11.Size = new System.Drawing.Size(104, 15);
             this.label11.TabIndex = 17;
-            this.label11.Text = "Curso";
+            this.label11.Text = "Curso (Referencia)";
             // 
             // btn_Cancel
             // 
@@ -483,8 +463,6 @@
         private Button btn_Save;
         private TextBox tb_Curso;
         private Label label11;
-        private Label AnoCurso;
-        private DateTimePicker dTimeP_AnoCurso;
         private DateTimePicker dTimeP_DataNascimento;
         private Button btn_Close;
         private TextBox tb_NumeroAluno;

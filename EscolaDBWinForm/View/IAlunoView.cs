@@ -17,7 +17,6 @@ namespace EscolaDBWinForm.View
         string EmailAluno { get; set; }
         string TelefoneAluno { get; set; }
         int CursoAluno { get; set; }
-        DateTime AnoCursoAluno { get; set; }
         byte[]? FotoAluno { get; set; }
 
         //State

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EscolaDBWinForm.View
 {
-    public partial class AlunoView : Form , IAlunoView
+    public partial class AlunoView : Form, IAlunoView
     {
         //Fields
         private string message;
@@ -43,8 +43,8 @@ namespace EscolaDBWinForm.View
                 }
             };
             //Associa o evento de click do botao Adicionar Aluno
-            btn_AddAluno.Click += delegate 
-            { 
+            btn_AddAluno.Click += delegate
+            {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 //Quando clickado remove a tab de Listagem
                 tabControl1.TabPages.Remove(tab_AlunosLista);
@@ -53,9 +53,9 @@ namespace EscolaDBWinForm.View
                 tab_AlunoDetalhe.Text = "Adicionar Aluno";
             };
             //Associa o evento de Editar
-            btn_EditAluno.Click += delegate 
-            { 
-                EditEvent?.Invoke(this, EventArgs.Empty); 
+            btn_EditAluno.Click += delegate
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
                 //Quando clickado remove a tab de Listagem
                 tabControl1.TabPages.Remove(tab_AlunosLista);
                 //Quando clickado adiciona a tab de detalhe
@@ -63,11 +63,11 @@ namespace EscolaDBWinForm.View
                 tab_AlunoDetalhe.Text = "Editar Aluno";
             };
             //Associa o evento de Remover
-            btn_DeleteAluno.Click += delegate 
-            { 
+            btn_DeleteAluno.Click += delegate
+            {
                 //Prompt a perguntar se deseja mesmo deletar o row
-               var answer = MessageBox.Show("Tem a certeza que deseja deletar o Aluno selecionado?","Atencao",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var answer = MessageBox.Show("Tem a certeza que deseja deletar o Aluno selecionado?", "Atencao",
+                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (answer == DialogResult.Yes)
                 {
                     //Se sim, entao chama o evento de delete
@@ -75,11 +75,11 @@ namespace EscolaDBWinForm.View
                     //Mostra resultado da operacao
                     MessageBox.Show(Message);
                 }
-            
+
             };
             //Associa o evento de Salvar 
-            btn_Save.Click += delegate 
-            { 
+            btn_Save.Click += delegate
+            {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 //Chekar se a operacao teve sucesso
                 if (IsSuccessful)
@@ -93,13 +93,13 @@ namespace EscolaDBWinForm.View
                 MessageBox.Show(Message);
             };
             //Associa o evento de Cancelar
-            btn_Cancel.Click += delegate 
-            { 
-                    CancelEvent?.Invoke(this, EventArgs.Empty);
-                    //Quando clickado remove a tab de detalhe
-                    tabControl1.TabPages.Remove(tab_AlunoDetalhe);
-                    //Quando clickado adiciona a tab de Listagem
-                    tabControl1.TabPages.Add(tab_AlunosLista);
+            btn_Cancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                //Quando clickado remove a tab de detalhe
+                tabControl1.TabPages.Remove(tab_AlunoDetalhe);
+                //Quando clickado adiciona a tab de Listagem
+                tabControl1.TabPages.Add(tab_AlunosLista);
             };
 
             btn_Upload.Click += delegate { UploadEvent?.Invoke(this, EventArgs.Empty); };
@@ -118,22 +118,31 @@ namespace EscolaDBWinForm.View
         public string ApelidoAluno { get => tb_Apelido.Text; set => tb_Apelido.Text = value; }
         public DateTime IdadeAluno { get => dTimeP_DataNascimento.Value; set => dTimeP_DataNascimento.Value = value; }
         public string MoradaAluno { get => tb_Morada.Text; set => tb_Morada.Text = value; }
-        public string EmailAluno { get => tb_Email.Text ; set => tb_Email.Text = value; }
+        public string EmailAluno { get => tb_Email.Text; set => tb_Email.Text = value; }
         public string TelefoneAluno { get => tb_Telefone.Text; set => tb_Telefone.Text = value; }
         public int CursoAluno
         {
             get { return Convert.ToInt32(tb_Curso.Text); }
             set { tb_Curso.Text = value.ToString(); }
         }
-        public DateTime AnoCursoAluno { get => dTimeP_AnoCurso.Value; set => dTimeP_AnoCurso.Value = value; }
         //Convert image to byte array and vice versa for database storage of FotoAluno 
         public byte[]? FotoAluno
         {
             get
             {
-                MemoryStream ms = new MemoryStream();
-                pb_FotoAluno.Image.Save(ms, pb_FotoAluno.Image.RawFormat);
-                return ms.GetBuffer();
+                if (pb_FotoAluno.Image != null)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    pb_FotoAluno.Image.Save(ms, pb_FotoAluno.Image.RawFormat);
+                    return ms.GetBuffer();
+                }
+                else
+                {
+                    return null;
+                }
+                /*                MemoryStream ms = new MemoryStream();
+                                pb_FotoAluno.Image.Save(ms, pb_FotoAluno.Image.RawFormat);
+                                return ms.GetBuffer();*/
             }
             set
             {
@@ -152,7 +161,7 @@ namespace EscolaDBWinForm.View
         }
 
 
-        public string SearchValue { get =>  tB_Search.Text; set => tB_Search.Text = value; }
+        public string SearchValue { get => tB_Search.Text; set => tB_Search.Text = value; }
         public bool IsEdit { get => isEdit; set => isEdit = value; }
         public bool IsSuccessful { get => isSuccessful; set => isSuccessful = value; }
         public string Message { get => message; set => message = value; }
@@ -192,7 +201,7 @@ namespace EscolaDBWinForm.View
                 instance.Dock = DockStyle.Fill;
             }
             else
-            {   
+            {
                 //Se estiver Minimizada traz a frente
                 if (instance.WindowState == FormWindowState.Minimized)
                 {

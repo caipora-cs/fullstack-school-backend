@@ -72,7 +72,9 @@ namespace EscolaDBWinForm.Controller
 
         private void ShowDocenteView(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            IDocenteView view = DocenteView.GetInstance((MainView)mainView);
+            IDocente model = new DocenteDbLogic();
+            new DocenteController(view, model);
         }
 
         private void ShowCursoView(object? sender, EventArgs e)
